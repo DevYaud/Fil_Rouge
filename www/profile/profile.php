@@ -26,6 +26,7 @@ echo "<tr>";
 while($row = $child->fetch_assoc()) {
     echo "<td>";
     echo "<table>";
+    echo "";
 
     echo "</table>";
     echo "</td>";
