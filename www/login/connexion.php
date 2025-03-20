@@ -8,9 +8,8 @@ if ( !isset($_POST['mail'], $_POST['password']) ) {
     exit('Les deux champs sont obligatoires');
 }
 
-if ($stmt = $con->prepare('SELECT id, mail FROM utilisateur WHERE mail = ?')) {
-    // Bind parameters (s = string, i = int), in our case the mail is a string so we use "s"
-    $stmt->bind_param('s', $_POST['username']);
+if ($stmt = $con->prepare('SELECT mail,password FROM utilisateur WHERE mail = ? AND password = ?')) {
+    $stmt->bind_param("ss", $_POST['mail'], $_POST['password']);
     $stmt->execute();
     // Store the result so we can check if the account exists in the database.
     $stmt->store_result();
@@ -22,20 +21,48 @@ if ($stmt = $con->prepare('SELECT id, mail FROM utilisateur WHERE mail = ?')) {
         // Methode cryptage possible ici : password_verify($_POST['password'], $password)
         if ($_POST['password'] === $password) {
             // Verification success! User has logged-in!
-            // Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
+            // Création de la session (Ensemble de cookies)
             session_regenerate_id();
             $_SESSION['logged'] = TRUE;
             $_SESSION['mail'] = $_POST['mail'];
             $_SESSION['id'] = $id;
+            $_SESSION['admin'] = FALSE;
         } else {
             // Incorrect password
             echo 'Nom utilisateur ou mot de passe incorrect';
         }
     } else {
         // Incorrect username
-        echo 'Incorrect username and/or password!';
+        echo 'Nom utilisateur ou mot de passe incorrect';
     }
 
     $stmt->close();
 }
 ?>
+
+
+?>
+
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+</head>
+<body>
+<div class="login">
+    <h1>Login</h1>
+    <form action="authenticate.php" method="post">
+        <label for="mail">
+            <i class="fas fa-mail"></i>
+        </label>
+        <input type="text" name="mail" placeholder="Mail" id="mail" required>
+        <label for="password">
+            <i class="fas fa-lock"></i>
+        </label>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+        <input type="submit" value="Login">
+    </form>
+</div>
+</body>
+</html>
