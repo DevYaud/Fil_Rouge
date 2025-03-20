@@ -4,7 +4,7 @@ global $con;
 include("../main.php");
 
 if (!isset($_SESSION['logged'])) {
-    header('../login/index.html');
+    header('../login/index.php');
     exit;
 }
 

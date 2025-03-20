@@ -4,9 +4,9 @@ global $con;
 session_start();
 // Database information
 $DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
-$DATABASE_NAME = 'fil_rouge';
+$DATABASE_USER = 'sc1zuna1689_DB';
+$DATABASE_PASS = 'fil_rouge';
+$DATABASE_NAME = 'sc1zuna1689_fil_rouge';
 // Connection Test
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 if ( mysqli_connect_errno() ) {
