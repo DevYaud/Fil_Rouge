@@ -14,4 +14,7 @@ if ( mysqli_connect_errno() ) {
     echo "Non connecté";
     exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
+else {
+    echo "connecté";
+}
 ?>
