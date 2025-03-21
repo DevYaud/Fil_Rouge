@@ -1,7 +1,7 @@
 <?php
 
 global $con;
-include("../main.php");
+include("../conn_db.php");
 
 if (!isset($_SESSION['logged'])) {
     header('../login/index.php');

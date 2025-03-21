@@ -1,7 +1,7 @@
 <?php
 
 global $con;
-include("../main.php");
+include("../conn_db.php");
 
 if ( !isset($_POST['mail'], $_POST['password']) ) {
     // Could not get the data that should have been sent.
@@ -42,27 +42,3 @@ if ($stmt = $con->prepare('SELECT mail,password FROM utilisateur WHERE mail = ? 
 
 
 ?>
-
-
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Login</title>
-</head>
-<body>
-<div class="login">
-    <h1>Login</h1>
-    <form action="authenticate.php" method="post">
-        <label for="mail">
-            <i class="fas fa-mail"></i>
-        </label>
-        <input type="text" name="mail" placeholder="Mail" id="mail" required>
-        <label for="password">
-            <i class="fas fa-lock"></i>
-        </label>
-        <input type="password" name="password" placeholder="Password" id="password" required>
-        <input type="submit" value="Login">
-    </form>
-</div>
-</body>
-</html>
