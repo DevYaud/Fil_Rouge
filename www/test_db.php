@@ -1,9 +1,15 @@
 <?php
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'sc1zuna1689_DB';
-$DATABASE_PASS = 'fil_rouge';
-$DATABASE_NAME = 'sc1zuna1689_fil_rouge';
+$servername = "localhost";
+$username = "sc1zuna1689_DB";
+$password = "fil_rouge";
+$name = "sc1zuna1689_fil_rouge";
 
-$mysqli = new mysqli($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $name);
 
-echo $mysqli->host_info . "\n";
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?> 
