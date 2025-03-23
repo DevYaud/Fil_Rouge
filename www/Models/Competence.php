@@ -1,0 +1,12 @@
+<?php
+	class Competence
+	{
+		var String $Nom;
+		var float $Note_niveau;
+	
+		private function __construct($_Nom,$_Note_niveau){
+			$this->Nom = $_Nom;
+			$this->Note_niveau = $_Note_niveau;
+		}
+	}		
+?>
