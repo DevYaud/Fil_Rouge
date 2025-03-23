@@ -4,7 +4,7 @@ class Enfant
 {
 	var int $Id_enfant;
 	var string $nom;
-	var $date_naissance;
+	var string $date_naissance;
 	var int $groupe;
     var string $situation_handicap;
     var string $type_regime;

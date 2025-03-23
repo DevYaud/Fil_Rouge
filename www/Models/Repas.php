@@ -1,6 +1,7 @@
 <?php
     class Repas
 	{
+        var int $id_repas;
 		var string $nom;
 		var string $entree;
 		var string $plat;

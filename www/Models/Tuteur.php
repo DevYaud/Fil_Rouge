@@ -2,6 +2,7 @@
 
 class tuteur
 {
+    var int $id_tuteur;
 	var string $nom;
 	var string $email;
 	var string $telephone;
@@ -18,5 +19,3 @@ class tuteur
 	}
 }
 
-
-?>
