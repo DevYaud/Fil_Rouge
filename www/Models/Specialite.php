@@ -2,7 +2,7 @@
 
 class Specialite
 { //Lionel : drôle de classe, un seul attribut ? 
-    var string $nom;
+    private string $nom;
     
     //Constructeur : 
     function __construct($_nom){

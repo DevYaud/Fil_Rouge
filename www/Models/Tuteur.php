@@ -2,12 +2,12 @@
 
 class tuteur
 {
-    var int $id_tuteur;
-	var string $nom;
-	var string $email;
-	var string $telephone;
-	var string $adresse;
-	var string $IBAN;
+    private int $id_tuteur;
+	private string $nom;
+	private string $email;
+	private string $telephone;
+	private string $adresse;
+	private string $IBAN;
 
 	//Constructeur : 
 	public function __construct($n,$email,$tel,$ad,$IB){

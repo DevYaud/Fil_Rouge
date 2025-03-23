@@ -2,12 +2,12 @@
 
 class Enfant
 {
-	var int $Id_enfant;
-	var string $nom;
-	var string $date_naissance;
-	var int $groupe;
-    var string $situation_handicap;
-    var string $type_regime;
+	private ?int $Id_enfant;
+	private string $nom;
+	private string $date_naissance;
+	private int $groupe;
+    private string $situation_handicap;
+    private string $type_regime;
 
 	public function __construct($nom, $date, $g, $tr, $sh)
 	{

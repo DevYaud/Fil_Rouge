@@ -1,10 +1,10 @@
 <?php 
     class Utilisateur
     {
-        var int $Id_utilisateur;
-        var string $mail;
-        var string $mot_de_passe;
-        var int $Id_connexion;
+        private ?int $Id_utilisateur;
+        private string $mail;
+        private string $mot_de_passe;
+        private ?int $Id_connexion;
     
         function _construct($_mail,$_mot_de_passe){
             $this->mail = $_mail;

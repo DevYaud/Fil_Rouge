@@ -1,9 +1,9 @@
 <?php
     class Etablissement
     {
-        var string $SIRET;
-        var string $nom;
-        var string $adresse;
+        private string $SIRET;
+        private string $nom;
+        private string $adresse;
     
         function __construct($_SIRET,$_nom,$_adresse){
             $this->SIRET = $_SIRET;

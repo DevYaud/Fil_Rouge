@@ -1,11 +1,11 @@
 <?php 
     class Rapport
     {
-        var int $id_Rapport;
-        var string $Commentaire;
-        var string $info_Comportement;
-        var DateTime $date;
-        var int $id_Enfant;
+        private int $id_Rapport;
+        private string $Commentaire;
+        private string $info_Comportement;
+        private DateTime $date;
+        private int $id_Enfant;
 
         function __construct($_Commentaire,$_info_Comportement,$_date,$_Id_enfant){
             $this->Commentaire = $_Commentaire;

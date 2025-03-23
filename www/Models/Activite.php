@@ -1,13 +1,13 @@
 <?php
 class Activite
 {
-    var int $Id_activite;
-    var string $nom;
-    var string $description;
-    var int $groupe;
-    var int $nb_max;
-    var int $Id_Specialite;
-    var int $Id_thematique;
+    private int $Id_activite;
+    private string $nom;
+    private string $description;
+    private int $groupe;
+    private int $nb_max;
+    private int $Id_Specialite;
+    private int $Id_thematique;
     
     //Constructeur : 
     function __construct($_nom,$_description,$_groupe,$_nb_max){
