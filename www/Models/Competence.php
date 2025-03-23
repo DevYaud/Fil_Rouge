@@ -9,4 +9,3 @@
 			$this->Note_niveau = $_Note_niveau;
 		}
 	}		
-?>
