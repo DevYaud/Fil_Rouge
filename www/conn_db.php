@@ -8,8 +8,8 @@ session_start();
 
 // Database information
 $DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'sc1zuna1689_DB';
-$DATABASE_PASS = 'fil_rouge';
+$DATABASE_USER = 'sc1zuna1689';
+$DATABASE_PASS = 'fil_rouge_projet';
 $DATABASE_NAME = 'sc1zuna1689_fil_rouge';
 
 // Connection Test
