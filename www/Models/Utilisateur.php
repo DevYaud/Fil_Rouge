@@ -11,4 +11,3 @@
             $this->mot_de_passe = $_mot_de_passe;
         }
     }
-?>

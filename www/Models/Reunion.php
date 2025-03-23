@@ -10,4 +10,3 @@
             $this-> date= $_date;
         }
     }
-?>

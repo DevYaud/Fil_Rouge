@@ -17,4 +17,3 @@
 			$this-> date= $_date;
 		}
 	}
-?>
