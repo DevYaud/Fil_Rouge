@@ -19,14 +19,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Requête pour vérifier les informations d'identification
-    $stmt = $con->prepare('SELECT * FROM UTILISATEUR WHERE mail = ? AND mot_de_passe = ?');
+    $stmt = $con->prepare('SELECT id_de_connexion, mail FROM UTILISATEUR WHERE mail = ? AND mot_de_passe = ?');
     $stmt->bind_param('ss', $mail, $password);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
+        // Récupérer les données de l'utilisateur
+        $user = $result->fetch_assoc();
+
         // Les informations d'identification sont correctes, création de la session
-        $_SESSION['mail'] = $mail;
+        $_SESSION['mail'] = $user['mail'];
+        $_SESSION['id_de_connexion'] = $user['id_de_connexion'];
         echo "Connexion réussie !";
         // Redirection vers une page protégée ou le tableau de bord
         // header('Location: dashboard.php');
@@ -37,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $stmt->close();
 }
+?>
 
 // Fermeture de la connexion à la base de données
 $con->close();
