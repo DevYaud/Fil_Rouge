@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'navigation_parents.php';
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['Id_connexion'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
@@ -32,6 +32,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     // Récupérer les données de l'utilisateur
     $user = $result->fetch_assoc();
+
     ?>
     <!DOCTYPE html>
     <html lang="fr">
