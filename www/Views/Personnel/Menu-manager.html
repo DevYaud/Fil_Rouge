@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de menus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            margin: 0;
+        }
+        
+        .sidebar {
+            width: 64px;
+            background-color: #314560e3;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            transition: width 0.3s ease-in-out;
+            overflow: hidden;
+            padding-top: 20px;
+        }
+
+        .sidebar:hover {
+            width: 200px;
+        }
+
+        .main-content {
+            margin-left: 64px;
+            padding: 20px;
+            flex: 1;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        .sidebar:hover + .main-content {
+            margin-left: 200px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #4a5568;
+        }
+
+        .menu-icon {
+            margin-right: 10px;
+        }
+
+        .menu-text {
+            display: none;
+        }
+
+        .sidebar:hover .menu-text {
+            display: inline;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+        .tab.active {
+            background: #007bff;
+            color: white;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 70%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: block;
+            width: 72%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div style="padding: 15px; font-size: 20px; text-align: center;">📦</div>
+        <nav>
+            <a href="#" class="menu-item"><span class="menu-icon">🏠</span><span class="menu-text">Accueil</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">💬</span><span class="menu-text">Messages</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">🔔</span><span class="menu-text">Notifications</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">🎯</span><span class="menu-text">Activités</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">⚙️</span><span class="menu-text">Paramètres</span></a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <h1>Gestionnaire des menus</h1>
+
+        <!-- Onglets -->
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('create')">Créer un Menu</div>
+            <div class="tab" onclick="showTab('edit')">Modifier un Menu</div>
+            <div class="tab" onclick="showTab('delete')">Supprimer un Menu</div>
+        </div>
+
+        <!-- Contenu des onglets -->
+        <div id="create" class="content active">
+            <h2>Créer un Menu</h2>
+            <form action="/ajouter_menu.php" method="POST">
+                <div class="form-group">
+                    <label for="menu_name">Nom du menu</label>
+                    <input type="text" id="menu_name" name="menu_name" required>
+                    <label for="menu_entree">Entrée</label>
+                    <input type="text" id="menu_entree" name="menu_entree" required>
+                    <label for="menu_plat">Plat</label>
+                    <input type="text" id="menu_plat" name="menu_plat" required>
+                    <label for="menu_dessert">Dessert</label>
+                    <input type="text" id="menu_dessert" name="menu_dessert" required>
+                    <label for="menu_allergenes">Allergènes</label>
+                    <input type="text" id="menu_allergenes" name="menu_allergenes" required>
+                </div>
+                <button type="submit" class="btn">Créer</button>
+            </form>
+        </div>
+
+        <div id="edit" class="content">
+            <h2>Modifier un Menu</h2>
+            <form action="/modifier_menu.php" method="POST">
+                <div class="form-group">
+                    <label for="menu_id">Sélectionner un menu</label>
+                    <select id="menu_id" name="menu_id">
+                        <option value="1">Menu 1</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="new_menu_name">Nouveau nom du menu</label>
+                    <input type="text" id="new_menu_name" name="new_menu_name" required>
+                </div>
+                <button type="submit" class="btn">Modifier</button>
+            </form>
+        </div>
+
+        <div id="delete" class="content">
+            <h2>Supprimer un Menu</h2>
+            <form action="/supprimer_menu.php" method="POST">
+                <div class="form-group">
+                    <label for="delete_menu_id">Sélectionner un menu</label>
+                    <select id="delete_menu_id" name="delete_menu_id">
+                        <option value="1">Menu 1</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Supprimer</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            let tabs = document.querySelectorAll('.tab');
+            let contents = document.querySelectorAll('.content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            document.querySelector('.tab[onclick="showTab(\'' + tabName + '\')"]').classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

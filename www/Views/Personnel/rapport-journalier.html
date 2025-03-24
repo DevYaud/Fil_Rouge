@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport journalier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            margin: 0;
+        }
+        
+        .sidebar {
+            width: 64px;
+            background-color: #314560e3;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            transition: width 0.3s ease-in-out;
+            overflow: hidden;
+            padding-top: 20px;
+        }
+
+        .sidebar:hover {
+            width: 200px;
+        }
+
+        .main-content {
+            margin-left: 64px;
+            padding: 20px;
+            flex: 1;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        .sidebar:hover + .main-content {
+            margin-left: 200px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #4a5568;
+        }
+
+        .menu-icon {
+            margin-right: 10px;
+        }
+
+        .menu-text {
+            display: none;
+        }
+
+        .sidebar:hover .menu-text {
+            display: inline;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh; /* Ajuste la hauteur pour centrer verticalement */
+        }
+
+        textarea {
+            width: 60%; /* Ajuste la largeur pour une symétrie */
+            height: 300px; /* Ajuste la hauteur */
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none; /* Empêche le redimensionnement */
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #164f9ae3;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #17253d;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar : -->
+    <div class="sidebar">
+        <div style="padding: 15px; font-size: 20px; text-align: center;">📦</div>
+        <nav>
+            <a href="#" class="menu-item"><span class="menu-icon">🏠</span><span class="menu-text">Accueil</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">💬</span><span class="menu-text">Messages</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">🔔</span><span class="menu-text">Notifications</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">🎯</span><span class="menu-text">Activités</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">⚙️</span><span class="menu-text">Paramètres</span></a>
+        </nav>
+    </div>
+    <!-- Contenu page :  -->
+    <div class="main-content">
+        <h1>Rapport journalier</h1>
+
+        <form action="" method="POST">
+            <textarea name="message" rows="10" cols="30">Journée OK, Bonne journée.</textarea>
+            <br><br>
+            <input type="submit" value="Envoyer">
+          </form>
+    </div>
+
+
+</body>
+</html>
