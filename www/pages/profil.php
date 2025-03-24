@@ -2,7 +2,7 @@
 session_start();
 
 // Vérifier si l'utilisateur est connecté
-if (!isset($_SESSION['id_de_connexion'])) {
+if (!isset($_SESSION['Id_connexion'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     header('Location: login.html');
     exit();
@@ -21,11 +21,11 @@ if (mysqli_connect_errno()) {
 }
 
 // Récupérer l'ID de connexion de la session
-$id_de_connexion = $_SESSION['id_de_connexion'];
+$Id_connexion = $_SESSION['Id_connexion'];
 
 // Requête pour récupérer les données de l'utilisateur
 $stmt = $con->prepare('SELECT email, nom, telephone, adresse FROM TUTEUR WHERE Id_tuteur = ?');
-$stmt->bind_param('i', $id_de_connexion);
+$stmt->bind_param('i', $Id_connexion);
 $stmt->execute();
 $result = $stmt->get_result();
 
