@@ -1,8 +1,8 @@
 /* Style de base pour le corps de la page */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Supprimer la marge par défaut du corps */
+    padding: 0; /* Supprimer le padding par défaut du corps */
     display: flex;
 }
 
@@ -14,6 +14,10 @@ body {
     padding-top: 20px;
     height: 100vh; /* Hauteur totale de la fenêtre */
     position: fixed; /* Position fixe pour rester en place */
+    top: 0; /* Aligner le menu en haut de la page */
+    left: 0; /* Aligner le menu à gauche de la page */
+    margin: 0; /* Supprimer les marges par défaut */
+    padding: 0; /* Supprimer les paddings par défaut */
 }
 
 /* Style pour les éléments de la liste */
