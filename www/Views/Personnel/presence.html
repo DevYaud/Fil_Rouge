@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de Présence</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: rgb(0, 71, 185);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .main-content {
+            margin-left: 64px;
+            padding: 20px;
+            flex: 1;
+            transition: margin-left 0.3s ease-in-out;
+        }
+        .sidebar {
+            width: 64px;
+            background-color: #314560e3;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            transition: width 0.3s ease-in-out;
+            overflow: hidden;
+            padding-top: 20px;
+        }
+        .sidebar:hover {
+            width: 250px;
+        }
+
+
+        .sidebar:hover + .main-content {
+            margin-left: 250px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #4a5568;
+        }
+
+        .menu-icon {
+            margin-right: 10px;
+        }
+
+        .menu-text {
+            display: none;
+        }
+
+        .sidebar:hover .menu-text {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar : -->
+    <div class="sidebar">
+        <div style="padding: 15px; font-size: 20px; text-align: center;">📦</div>
+        <nav>
+            <a href="#" class="menu-item"><span class="menu-icon">🏠</span><span class="menu-text">Accueil</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">💬</span><span class="menu-text">Messages</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">🔔</span><span class="menu-text">Notifications</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">🎯</span><span class="menu-text">Activités</span></a>
+            <a href="#" class="menu-item"><span class="menu-icon">⚙️</span><span class="menu-text">Paramètres</span></a>
+        </nav>
+    </div>
+    <div class="main-content">
+        <h2>Liste de Présence</h2>
+        <form id="presenceForm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom de l'enfant</th>
+                        <th>Présent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jean Dupont</td>
+                        <td><input type="checkbox" name="present" value="Jean Dupont"></td>
+                    </tr>
+                    <tr>
+                        <td>Marie Curie</td>
+                        <td><input type="checkbox" name="present" value="Marie Curie"></td>
+                    </tr>
+                    <tr>
+                        <td>Paul Martin</td>
+                        <td><input type="checkbox" name="present" value="Paul Martin"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit">Enregistrer la présence</button>
+        </form>
+    </div>
+    
+
+
+</body>
+</html>

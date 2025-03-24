@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des rapports</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 64px;
+            background-color: #314560e3;
+            color: white;
+            transition: width 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .sidebar:hover {
+            width: 250px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #4a5568;
+        }
+
+        .menu-icon {
+            margin-right: 12px;
+        }
+
+        .menu-text {
+            display: none;
+        }
+
+        .sidebar:hover .menu-text {
+            display: inline;
+        }
+
+        /* Contenu */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            margin-left: 64px;
+            transition: margin-left 0.3s ease-in-out;
+            overflow-y: auto;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th {
+            text-align: left;
+            padding: 10px;
+            background-color: #63719562;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #271b4b;
+        }
+
+        tr {
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        tr:hover {
+            background-color: #e2e2f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div style="padding: 15px; font-size: 22px; text-align: center;">📦</div>
+        <nav>
+            <a href="#" class="menu-item">
+                <span class="menu-icon">🏠</span>
+                <span class="menu-text">Accueil</span>
+            </a>
+            <a href="#" class="menu-item">
+                <span class="menu-icon">💬</span>
+                <span class="menu-text">Messages</span>
+            </a>
+            <a href="#" class="menu-item">
+                <span class="menu-icon">🔔</span>
+                <span class="menu-text">Notifications</span>
+            </a>
+            <a href="#" class="menu-item">
+                <span class="menu-icon">🎯</span>
+                <span class="menu-text">Activités</span>
+            </a>
+            <a href="#" class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                <span class="menu-text">Paramètres</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="main-content">
+        <h1>Liste des rapports</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date du rapport</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick=" ">
+                    <td>27/03/2025</td>
+                </tr>
+                <tr onclick=" ">
+                    <td>26/03/2025</td>
+                </tr>
+                <!--
+                <?php foreach ($rapports as $rapport):
+                    something something, 
+                    Besoin de la date du rapport ou titre du rapport.
+                    endforeach; ?>
+                -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
