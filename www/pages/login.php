@@ -31,9 +31,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Les informations d'identification sont correctes, création de la session
         $_SESSION['mail'] = $user['mail'];
         $_SESSION['Id_connexion'] = $user['Id_connexion'];
+
+        $id_tuteur = $user['Id_connexion'];
+        $stmt_parente = $con->prepare('SELECT Id_enfant FROM PARENTE WHERE Id_tuteur = ? LIMIT 1');
+        $stmt_parente->bind_param('i', $id_tuteur);
+        $stmt_parente->execute();
+        $result_parente = $stmt_parente->get_result();
+
+        if ($result_parente->num_rows > 0) {
+            $parente = $result_parente->fetch_assoc();
+            $_SESSION['Id_enfant'] = $parente['Id_enfant'];
+        }
+
+
         echo "Connexion réussie !";
-        // Redirection vers une page protégée ou le tableau de bord
-        // header('Location: dashboard.php');
+        // Redirection vers le tableau de bord
+        header('Location: profil.php');
     } else {
         // Les informations d'identification sont incorrectes
         echo "Email ou mot de passe incorrect.";
@@ -41,8 +54,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $stmt->close();
 }
-?>
-
-// Fermeture de la connexion à la base de données
-$con->close();
 ?>
