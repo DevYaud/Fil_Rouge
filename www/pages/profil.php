@@ -33,6 +33,19 @@ if ($result->num_rows > 0) {
     // Récupérer les données de l'utilisateur
     $user = $result->fetch_assoc();
 
+    // Récupérer l'ID de l'enfant de la session
+    $Id_enfant = $_SESSION['Id_enfant'];
+
+    // Requête pour récupérer les données de l'enfant
+    $stmt_enfant = $con->prepare('SELECT nom, date_naissance, type_regime FROM ENFANT WHERE Id_enfant = ?');
+    $stmt_enfant->bind_param('i', $Id_enfant);
+    $stmt_enfant->execute();
+    $result_enfant = $stmt_enfant->get_result();
+
+    if ($result_enfant->num_rows > 0) {
+        // Récupérer les données de l'enfant
+        $enfant = $result_enfant->fetch_assoc();
+    }
     ?>
     <!DOCTYPE html>
     <html lang="fr">
@@ -46,6 +59,12 @@ if ($result->num_rows > 0) {
     <p><strong>Nom :</strong> <?php echo htmlspecialchars($user['nom']); ?></p>
     <p><strong>Téléphone :</strong> <?php echo htmlspecialchars($user['telephone']); ?></p>
     <p><strong>Adresse :</strong> <?php echo htmlspecialchars($user['adresse']); ?></p>
+    <?php if (isset($enfant)): ?>
+        <h2>Informations de l'Enfant</h2>
+        <p><strong>Nom :</strong> <?php echo htmlspecialchars($enfant['nom']); ?></p>
+        <p><strong>Date de Naissance :</strong> <?php echo htmlspecialchars($enfant['date_naissance']); ?></p>
+        <p><strong>Type de Régime :</strong> <?php echo htmlspecialchars($enfant['type_regime']); ?></p>
+    <?php endif; ?>
     </body>
     </html>
     <?php
