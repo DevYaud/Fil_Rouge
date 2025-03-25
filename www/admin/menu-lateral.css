@@ -1,0 +1,46 @@
+/* Style de base pour le corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Supprimer la marge par défaut du corps */
+    padding: 0; /* Supprimer le padding par défaut du corps */
+    display: flex;
+}
+
+/* Style pour le menu latéral */
+.menu-latéral {
+    width: 250px; /* Largeur du menu latéral */
+    background-color: #333; /* Couleur de fond du menu */
+    color: white; /* Couleur du texte */
+    height: 100vh; /* Hauteur totale de la fenêtre */
+    position: fixed; /* Position fixe pour rester en place */
+    top: 0; /* Aligner le menu en haut de la page */
+    left: 0; /* Aligner le menu à gauche de la page */
+    margin: 0; /* Supprimer les marges par défaut */
+    padding: 0; /* Supprimer les paddings par défaut */
+}
+
+/* Style pour les éléments de la liste */
+.menu-latéral .nav-link {
+    list-style-type: none; /* Supprimer les puces de la liste */
+    padding: 15px 20px; /* Espacement interne */
+    border-bottom: 1px solid #444; /* Ligne de séparation */
+}
+
+/* Style pour les liens dans le menu */
+.menu-latéral .nav-link a {
+    color: white; /* Couleur du texte des liens */
+    text-decoration: none; /* Supprimer le soulignement des liens */
+    display: block; /* Faire en sorte que le lien occupe toute la largeur */
+}
+
+/* Effet au survol des liens */
+.menu-latéral .nav-link a:hover {
+    background-color: #555; /* Couleur de fond au survol */
+}
+
+/* Contenu principal de la page */
+.content {
+    margin-left: 250px; /* Marge à gauche pour laisser de la place au menu */
+    padding: 20px;
+    width: calc(100% - 250px); /* Largeur ajustée pour occuper le reste de l'espace */
+}
