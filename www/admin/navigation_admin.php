@@ -23,6 +23,7 @@ session_start();
         <li class="nav-link"><a href="comptes.php">Gestion Comptes</a></li>
         <li class="nav-link"><a href="activite.php">Gestion Activité</a></li>
         <li class="nav-link"><a href="repas.php">Gestion Repas</a></li>
+        <li class="nav-link"><a href="rapport.php">Création Rapport</a></li>
         <li class="nav-link"><a href="logout.php">Déconnexion</a></li>
     </ul>
 </nav>
