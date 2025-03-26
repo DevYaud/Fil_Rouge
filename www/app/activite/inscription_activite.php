@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['inscription'])) {
                 <ul>
                     <?php foreach ($evenements as $evenement): ?>
                         <li style="cursor: pointer;" onclick="document.getElementById('form_<?php echo $evenement['Id_Event']; ?>').submit();">
-                            <form id="form_<?php echo $evenement['Id_Event']; ?>" action="inscription_activites.php" method="post">
+                            <form id="form_<?php echo $evenement['Id_Event']; ?>" action="./inscription_activite.php" method="post">
                                 <input type="hidden" name="inscription" value="<?php echo $evenement['Id_Event']; ?>">
                                 <strong>Nom de l'activité :</strong> <?php echo htmlspecialchars($evenement['nom']); ?><br>
                                 <strong>Commentaire :</strong> <?php echo htmlspecialchars($evenement['commentaire']); ?><br>
