@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param('ss', $mail, $password);
     $stmt->execute();
     $result = $stmt->get_result();
-
+    $success_message ="";
     if ($result->num_rows > 0) {
         // Récupérer les données de l'utilisateur
         $user = $result->fetch_assoc();
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['mail'] = $user['mail'];
         $_SESSION['Id_connexion'] = $user['Id_connexion'];
 
-        echo "Connexion réussie !";
+        $success_message = "Rapport ajouté avec succès !";
         // Redirection vers le tableau de bord
         header('Location: dashboard.php');
         exit(); // Assurez-vous que le script s'arrête après la redirection
@@ -43,6 +43,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../styles/main.css">
+    <script>
+        function showPopup(message) {
+            alert(message);
+            window.location.href = 'dashboard.php';
+        }
+    </script>
 </head>
 <body>
 <h2>Connexion</h2>
@@ -60,6 +66,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </form>
 </body>
 </html>
+
+<?php
+if ($success_message) {
+    echo "<script>showPopup('$success_message');</script>";
+}
+?>
 
 <?php
 $con->close();
