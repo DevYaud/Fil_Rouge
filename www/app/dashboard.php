@@ -53,7 +53,7 @@ $age = $aujourdhui->diff($date_naissance)->y;
         <h1 class="text-center">Tableau de bord - Parent</h1>
         <div class="grid">
             <div class="box">
-                <h2>Emploi du temps</h2>
+                <h2>Work in Progress</h2>
             </div>
 
             <div class="box">
