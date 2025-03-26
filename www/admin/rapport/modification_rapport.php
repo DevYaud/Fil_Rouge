@@ -63,6 +63,7 @@ $stmt->close();
     <meta charset="UTF-8">
     <title>Modification de Rapport</title>
     <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/form.css">
 </head>
 <body>
 <main class="content">
