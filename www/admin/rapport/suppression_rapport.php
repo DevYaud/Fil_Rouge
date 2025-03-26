@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <title>Suppression de Rapport</title>
     <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/form.css">
     <script>
         function showPopup(message) {
             alert(message);
@@ -52,19 +53,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 <main class="content">
 <h1>Supprimer un Rapport</h1>
-<form action="suppression_rapport.php" method="post">
-    <label for="rapport">Sélectionnez un rapport à supprimer :</label><br>
-    <select id="rapport" name="rapport" required>
-        <?php foreach ($rapports as $rapport): ?>
-            <option value="<?php echo $rapport['Id_rapport']; ?>">
-                <?php echo htmlspecialchars("Rapport #{$rapport['Id_rapport']}: {$rapport['Commentaire']}"); ?>
-            </option>
-        <?php endforeach; ?>
-    </select><br><br>
-    <input type="submit" value="Supprimer">
-</form>
-
+    <form action="suppression_rapport.php" method="post">
+        <div class ="form-group">
+            <label for="rapport">Sélectionnez un rapport à supprimer :</label><br>
+            <select id="rapport" name="rapport" required>
+                <?php foreach ($rapports as $rapport): ?>
+                    <option value="<?php echo $rapport['Id_rapport']; ?>">
+                        <?php echo htmlspecialchars("Rapport #{$rapport['Id_rapport']}: {$rapport['Commentaire']}"); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select><br><br>
+        </div>
+        <input type="submit" class="btn" value="Supprimer">
+    </form>
 </main>
+
 <?php
 if ($success_message) {
     echo "<script>showPopup('$success_message');</script>";
