@@ -8,52 +8,6 @@ include 'navigation_admin.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Personnel</title>
-    <style>
-    /*---Contenu BODY et Container */
-    .content {
-        margin-left: 64px;
-        padding: 20px;
-        flex: 1;
-        transition: margin-left 0.3s ease-in-out;
-    }
-    .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    /* Grid and box */
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
-    .box {
-        background: #f8f9fa;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .box h2 {
-        margin-top: 0;
-    }
-    .btn {
-        display: block;
-        margin-top: 10px;
-        padding: 10px;
-        background: #007bff;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-    }
-    .btn:hover {
-        background: #0056b3;
-    }
-    </style>
 </head>
 
 <body>
