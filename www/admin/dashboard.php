@@ -5,6 +5,8 @@ verifierSessionAdmin();
 
 require_once '../functions/db.php';
 $con = getDatabase();
+
+include 'navigation_admin.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
