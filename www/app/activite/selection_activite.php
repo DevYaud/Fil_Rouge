@@ -13,7 +13,7 @@ $date_j_plus_7 = date('Y-m-d H:i:s', strtotime('+7 days'));
 
 // Récupérer les événements disponibles entre aujourd'hui et J+7
 $stmt = $con->prepare('
-    SELECT E.Id_Event, E.commentaire, E.debut, E.fin, A.nom, a.nb_max
+    SELECT E.Id_Event, E.commentaire, E.debut, E.fin, A.nom, A.nb_max
     FROM EVENEMENT E
     JOIN ACTIVITE A ON E.Id_activite = A.Id_activite
     WHERE E.debut BETWEEN NOW() AND ?
