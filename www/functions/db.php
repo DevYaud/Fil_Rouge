@@ -8,8 +8,8 @@ function getDatabase()
 {
     session_start();
     $DATABASE_HOST = 'localhost';
-    $DATABASE_USER = 'sc1zuna1689';
-    $DATABASE_PASS = getenv("PASSWORD");
+    $DATABASE_USER = 'sc1zuna1689_website';
+    $DATABASE_PASS = 'ZVBAJWG51BWMAI';
     $DATABASE_NAME = 'sc1zuna1689_fil_rouge';
 
 // Connexion à la base de données
