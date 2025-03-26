@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <title>Création de Rapport</title>
     <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/form.css">
     <script>
         function showPopup(message) {
             alert(message);
@@ -55,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <main class="content">
     <h1>Créer un Rapport</h1>
     <form action="creation_rapport.php" method="post">
+        <div class="form-group">
         <label for="Commentaire">Commentaire :</label><br>
         <textarea id="Commentaire" name="Commentaire" rows="4" cols="50" required></textarea><br><br>
 
@@ -70,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="<?php echo $enfant['Id_enfant']; ?>"><?php echo htmlspecialchars($enfant['nom']); ?></option>
             <?php endforeach; ?>
         </select><br><br>
-
+        </div>
     <input type="submit" value="Valider">
 </form>
 
