@@ -1,8 +1,8 @@
 <?php
 session_start();
 include '../navigation_admin.php';
+require_once '../../functions/db.php';
 
-verifierSession();
 $con = getDatabase();
 
 // Traitement du formulaire
