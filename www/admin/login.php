@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Requête pour vérifier les informations d'identification
-    $stmt = $con->prepare('SELECT Id_connexion, mail FROM UTILISATEUR WHERE mail = ? AND mot_de_passe = ?');
+    $stmt = $con->prepare('SELECT Id_connexion, mail FROM COMPTE_ADMIN WHERE mail = ? AND mot_de_passe = ?');
     $stmt->bind_param('ss', $mail, $password);
     $stmt->execute();
     $result = $stmt->get_result();
