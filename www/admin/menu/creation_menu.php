@@ -2,7 +2,9 @@
 session_start();
 include '../navigation_admin.php';
 require_once '../../functions/db.php';
+require_once '../../functions/session.php';
 
+verifierSessionAdmin();
 $con = getDatabase();
 
 // Traitement du formulaire

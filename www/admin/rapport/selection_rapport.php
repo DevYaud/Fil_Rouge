@@ -2,7 +2,9 @@
 session_start();
 include '../navigation_admin.php';
 require_once '../../functions/db.php';
+require_once '../../functions/session.php';
 
+verifierSessionAdmin();
 $con = getDatabase();
 
 // Récupérer la liste des rapports
@@ -45,18 +47,6 @@ $stmt->close();
         <?php endforeach; ?>
         </tbody>
     </table>
-
-    <!-- CONSERVER la version précédente par précaution.
-        <form action="modification_rapport.php" method="post">
-        <select id="rapport" name="rapport" required>
-            <?php foreach ($rapports as $rapport): ?>
-                <option value="<?php echo $rapport['Id_rapport']; ?>">
-                    <?php echo htmlspecialchars("Rapport #{$rapport['Id_rapport']}: {$rapport['Commentaire']}"); ?>
-                </option>
-            <?php endforeach; ?>
-        </select><br><br>
-        <input type="submit" value="Modifier">
-    </form>-->
     </main>
     </body>
     </html>
