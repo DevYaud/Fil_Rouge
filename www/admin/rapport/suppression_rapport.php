@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
+<main class="content">
 <h1>Supprimer un Rapport</h1>
 <form action="suppression_rapport.php" method="post">
     <label for="rapport">Sélectionnez un rapport à supprimer :</label><br>
@@ -54,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </select><br><br>
     <input type="submit" value="Supprimer">
 </form>
+</main>
 </body>
 </html>
 
