@@ -52,8 +52,8 @@ $stmt->close();
         </style>
     </head>
     <body>
+    <main class = "content">
     <h1>Sélectionner un Rapport à Modifier</h1>
-
     <table>
         <thead>
         <tr>
@@ -85,6 +85,7 @@ $stmt->close();
         </select><br><br>
         <input type="submit" value="Modifier">
     </form>-->
+    </main>
     </body>
     </html>
 
