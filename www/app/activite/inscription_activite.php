@@ -9,8 +9,8 @@ $con = getDatabase();
 
 
 // Vérifier si un ID d'événement est passé en paramètre
-if (isset($_GET['id'])) {
-    $id_event = $_GET['id'];
+if (isset($_GET['Id_Event'])) {
+    $id_event = $_GET['Id_Event'];
     $id_enfant = $_SESSION['Id_enfant'];
     $date_inscription = date('Y-m-d H:i:s');
     $presence = 0;
