@@ -68,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Login</title>
 </head>
 <body>
+
 <h2>Connexion</h2>
 <?php if (isset($error_message)): ?>
     <p style="color: red;"><?php echo $error_message; ?></p>

@@ -7,6 +7,7 @@ session_start();
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/main_parent.css">
     <title></title>
 </head>
 <body>
