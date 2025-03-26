@@ -1,12 +1,12 @@
 <?php
 session_start();
 require_once '../../functions/session.php';
-verifierSessionAdmin();
+verifierSessionParents();
 
 require_once '../../functions/db.php';
 $con = getDatabase();
 
-include '../navigation_admin.php';
+include '../navigation_parents.php';
 
 // Récupérer le nom du parent à partir de l'Id_connexion
 $id_connexion = $_SESSION['Id_connexion'];
