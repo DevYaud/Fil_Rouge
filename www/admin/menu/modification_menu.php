@@ -81,8 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
 
         <label for="date">Date :</label><br>
         <input type="date" id="date" name="date" value="<?php echo $repas['date']; ?>" required><br><br>
-        </div>
         <input type="submit" name="update" class="btn" value="Mettre à jour">
+        </div>
 
     </form>
 </main>

@@ -72,8 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="<?php echo $enfant['Id_enfant']; ?>"><?php echo htmlspecialchars($enfant['nom']); ?></option>
             <?php endforeach; ?>
         </select><br><br>
+        <input type="submit" class="btn" value="Valider">
         </div>
-    <input type="submit" class="btn" value="Valider">
 </form>
 
 <?php

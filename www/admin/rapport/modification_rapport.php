@@ -92,8 +92,8 @@ $stmt->close();
             </option>
         <?php endforeach; ?>
     </select><br><br>
-    </div>
     <input type="submit" class="btn" name="update" value="Mettre à jour">
+    </div>
 </form>
 </main>
 <?php

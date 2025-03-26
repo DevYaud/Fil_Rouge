@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label for="id_connexion">ID Connexion :</label><br>
             <input type="number" id="id_connexion" name="id_connexion" required><br><br>
-            </div>
             <input type="submit" class="btn" value="Valider">
+            </div>
         </form>
 
         <?php
