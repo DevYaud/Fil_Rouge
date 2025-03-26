@@ -9,8 +9,8 @@ $con = getDatabase();
 include '../navigation_parents.php';
 
 // Vérifier si un ID d'événement est passé en paramètre POST
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['Id_event'])) {
-    $id_event = $_POST['Id_event'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id_event'])) {
+    $id_event = $_POST['id_event'];
     $id_enfant = $_SESSION['Id_enfant'];
     $date_inscription = date('Y-m-d H:i:s');
     $presence = 0;
