@@ -62,6 +62,7 @@ $stmt->close();
     <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
+<main class="content">
 <h1>Modifier un Rapport</h1>
 <form action="modification_rapport.php" method="post">
     <input type="hidden" name="rapport" value="<?php echo $id_rapport; ?>">
@@ -85,6 +86,7 @@ $stmt->close();
 
     <input type="submit" name="update" value="Mettre à jour">
 </form>
+</main>
 </body>
 </html>
 
