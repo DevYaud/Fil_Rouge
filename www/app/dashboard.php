@@ -43,7 +43,7 @@ include 'navigation_parents.php';
 
             <div class="box">
                 <h2>Rapports</h2>
-                <a href="./rapport/liste_rapport.php.php" class="btn">Accéder aux rapports</a>
+                <a href="./rapport/liste_rapport.php" class="btn">Accéder aux rapports</a>
             </div>
 
             <div class="box">
