@@ -6,7 +6,7 @@ verifierSessionAdmin();
 require_once '../../functions/db.php';
 $con = getDatabase();
 
-include '../navigation_admin.php';
+include '../navigation_parents.php';
 
 // Traitement du formulaire
 $success_message = "";
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Notation de l'Établissement</title>
-    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/main_parent.css">
     <link rel="stylesheet" href="../../styles/form.css">
     <script>
         function showPopup(message) {
