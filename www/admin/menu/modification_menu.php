@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $id_inscription = $_POST['id_inscription'];
 
     // Requête de mise à jour du repas
-    $stmt = $con->prepare('UPDATE REPAS SET nom = ?, entrée = ?, plat = ?, dessert = ?, date = ?, ID_inscription = ? WHERE Id_repas = ?');
-    $stmt->bind_param('sssssii', $nom, $entree, $plat, $dessert, $date, $id_inscription, $id_repas);
+    $stmt = $con->prepare('UPDATE REPAS SET nom = ?, plat = ?, dessert = ?, date = ? WHERE Id_repas = ?');
+    $stmt->bind_param('ssssi', $nom, $entree, $plat, $dessert, $date, $id_repas);
     if ($stmt->execute()) {
         $success_message = "Repas mis à jour avec succès !";
     } else {
@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
 <main class="content">
     <h1>Modifier un Repas</h1>
     <form action="modification_menu.php" method="post">
+        <div class="form-group">
         <input type="hidden" name="repas" value="<?php echo $id_repas; ?>">
         <label for="nom">Nom du Repas :</label><br>
         <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($repas['nom']); ?>" required><br><br>
@@ -81,10 +82,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
         <label for="date">Date :</label><br>
         <input type="date" id="date" name="date" value="<?php echo $repas['date']; ?>" required><br><br>
 
-        <label for="id_inscription">ID Inscription :</label><br>
-        <input type="number" id="id_inscription" name="id_inscription" value="<?php echo $repas['ID_inscription']; ?>" required><br><br>
-
         <input type="submit" name="update" value="Mettre à jour">
+        </div>
     </form>
 </main>
 <?php
