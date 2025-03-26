@@ -2,24 +2,8 @@
 session_start();
 include '../navigation_admin.php';
 
-// Informations de connexion à la base de données
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'sc1zuna1689';
-$DATABASE_PASS = 'fil_rouge_projet';
-$DATABASE_NAME = 'sc1zuna1689_fil_rouge';
-
-// Vérifier si l'utilisateur est connecté
-if (!isset($_SESSION['Id_connexion'])) {
-    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-    header('Location: ../login.php');
-    exit();
-}
-
-// Connexion à la base de données
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-if (mysqli_connect_errno()) {
-    exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
+verifierSession();
+$con = getDatabase();
 
 // Récupérer la liste des enfants
 $stmt = $con->prepare('SELECT Id_enfant, nom FROM ENFANT');
@@ -56,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Création de Rapport</title>
+    <link rel="stylesheet" href="../../styles/main.css">
     <script>
         function showPopup(message) {
             alert(message);
@@ -63,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     </script>
 </head>
-<link rel="stylesheet" href="../../styles/main.css">
 <body>
 <main class="content">
     <h1>Créer un Rapport</h1>
