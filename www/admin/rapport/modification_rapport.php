@@ -73,6 +73,7 @@ $stmt->close();
 <main class="content">
 <h1>Modifier un Rapport</h1>
 <form action="modification_rapport.php" method="post">
+    <div class="form-group">
     <input type="hidden" name="rapport" value="<?php echo $id_rapport; ?>">
     <label for="Commentaire">Commentaire :</label><br>
     <textarea id="Commentaire" name="Commentaire" rows="4" cols="50" required><?php echo htmlspecialchars($rapport['Commentaire']); ?></textarea><br><br>
@@ -91,8 +92,8 @@ $stmt->close();
             </option>
         <?php endforeach; ?>
     </select><br><br>
-
-    <input type="submit" name="update" value="Mettre à jour">
+    </div>
+    <input type="submit" class="btn" name="update" value="Mettre à jour">
 </form>
 </main>
 <?php

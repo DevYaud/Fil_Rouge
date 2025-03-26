@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <?php endforeach; ?>
         </select><br><br>
         </div>
-    <input type="submit" value="Valider">
+    <input type="submit" class="btn" value="Valider">
 </form>
 
 <?php

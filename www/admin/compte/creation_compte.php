@@ -56,13 +56,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <main class="content">
         <h1>Créer un Compte Utilisateur</h1>
         <form action="creation_compte.php" method="post">
+            <div class="form-group">
             <label for="mail">Email :</label><br>
             <input type="email" id="mail" name="mail" required><br><br>
 
             <label for="id_connexion">ID Connexion :</label><br>
             <input type="number" id="id_connexion" name="id_connexion" required><br><br>
-
-            <input type="submit" value="Valider">
+            </div>
+            <input type="submit" class="btn" value="Valider">
         </form>
 
         <?php
