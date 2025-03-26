@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
+<main class = "content">
 <h1>Créer un Menu</h1>
 <form action="creation_menu.php" method="post">
     <label for="nom">Nom du Menu :</label><br>
@@ -71,7 +72,7 @@ if ($success_message) {
     echo "<script>showPopup('$success_message');</script>";
 }
 ?>
-
+</main>
 </body>
 </html>
 
