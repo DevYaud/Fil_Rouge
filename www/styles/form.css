@@ -26,7 +26,7 @@ form{
 }
 /* Modifie les zones de texte */
 textarea {
-    width: 60%; /* Ajuste la largeur pour une symétrie */
+    width: 70%; /* Ajuste la largeur pour une symétrie */
     height: 100px; /* Ajuste la hauteur */
     padding: 12px;
     border: 1px solid #ccc;
