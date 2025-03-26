@@ -49,7 +49,7 @@ $stmt->close();
         <div class="box">
             <h2>Total des factures non payées :</h2>
             <p><?php echo htmlspecialchars(number_format($total_non_paye, 2, ',', ' ')); ?> €</p>
-            <a class="btn">Payer</a>
+            <a href="https://www.paypal.com/paypalme/Newoobs" class="btn">Payer</a>
         </div>
 
         <div class="box">
