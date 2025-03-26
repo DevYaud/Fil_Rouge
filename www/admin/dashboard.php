@@ -48,7 +48,7 @@ include 'navigation_admin.php';
 
             <div class="box">
                 <h2>Gestion des comptes</h2>
-                <a href="./compte/creation_compte.php.php" class="btn">Créer un compte</a>
+                <a href="./compte/creation_compte.php" class="btn">Créer un compte</a>
                 <a href="./menu/selection_repas.php" class="btn">Modifier un compte existant</a>
                 <a href="./menu/suppression_menu.php" class="btn">Supprimer un compte existant</a>
             </div>
