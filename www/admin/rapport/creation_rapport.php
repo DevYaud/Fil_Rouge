@@ -55,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Création de Rapport</title>
+    <link rel="stylesheet" href="../../styles/main.css">
     <script>
         function showPopup(message) {
             alert(message);
