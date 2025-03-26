@@ -26,7 +26,7 @@ $email = $_SESSION['mail'];
 <head>
     <meta charset="UTF-8">
     <title>Formulaire de Contact</title>
-    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/main_parent.css">
     <link rel="stylesheet" href="../../styles/form.css">
 </head>
 <body>
