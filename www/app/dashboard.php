@@ -66,7 +66,7 @@ $age = $aujourdhui->diff($date_naissance)->y;
 
             <div class="box">
                 <h2>Gestion des activités</h2>
-                <a href="./activite/inscription_activite.php" class="btn">Inscription</a>
+                <a href="./activite/selection_activite.php" class="btn">Inscription</a>
                 <a href="./activite/desinscription_activite.php" class="btn">Désinscription</a>
             </div>
 
