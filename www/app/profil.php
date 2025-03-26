@@ -4,7 +4,7 @@ include 'navigation_parents.php';
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['Id_connexion'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-    header('Location: login.html');
+    header('Location: login.php');
     exit();
 }
 
@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
     <?php
 } else {
     // Si aucune donnée n'est trouvée, rediriger vers la page de connexion
-    header('Location: login.html');
+    header('Location: login.php');
     exit();
 }
 
