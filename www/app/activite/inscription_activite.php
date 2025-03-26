@@ -6,11 +6,11 @@ verifierSessionParents();
 require_once '../../functions/db.php';
 $con = getDatabase();
 
+include '../navigation_parents.php';
 
-
-// Vérifier si un ID d'événement est passé en paramètre
-if (isset($_GET['Id_Event'])) {
-    $id_event = $_GET['Id_Event'];
+// Vérifier si un ID d'événement est passé en paramètre POST
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['Id_event'])) {
+    $id_event = $_POST['Id_event'];
     $id_enfant = $_SESSION['Id_enfant'];
     $date_inscription = date('Y-m-d H:i:s');
     $presence = 0;
@@ -26,12 +26,10 @@ if (isset($_GET['Id_Event'])) {
     $stmt->close();
 } else {
     // Rediriger vers la page de sélection si aucun ID d'événement n'est passé
-    header('Location: inscription_activites.php');
+    header('Location: selection_activite.php');
     exit();
 }
 ?>
-
-<?php include '../navigation_parents.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -62,3 +60,4 @@ if (isset($_GET['Id_Event'])) {
 <?php
 $con->close();
 ?>
+

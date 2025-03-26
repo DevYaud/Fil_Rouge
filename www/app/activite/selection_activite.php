@@ -13,7 +13,7 @@ $date_j_plus_7 = date('Y-m-d H:i:s', strtotime('+7 days'));
 
 // Récupérer les événements disponibles entre aujourd'hui et J+7
 $stmt = $con->prepare('
-    SELECT E.Id_Event, E.commentaire, E.debut, E.fin, A.nom, A.nb_max
+    SELECT E.Id_Event, E.commentaire, E.debut, E.fin, A.nom, a.nb_max
     FROM EVENEMENT E
     JOIN ACTIVITE A ON E.Id_activite = A.Id_activite
     WHERE E.debut BETWEEN NOW() AND ?
@@ -33,25 +33,28 @@ $stmt->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription aux Activités</title>
+    <title>Sélection d'Activité</title>
     <link rel="stylesheet" href="../../styles/main_parent.css">
 </head>
 <body>
 <main class="content">
     <div class="container">
-        <h1 class="text-center">Inscription aux Activités</h1>
+        <h1 class="text-center">Sélection d'Activité</h1>
         <div class="box">
             <?php if (empty($evenements)): ?>
                 <p>Aucun événement disponible pour les 7 prochains jours.</p>
             <?php else: ?>
                 <ul>
                     <?php foreach ($evenements as $evenement): ?>
-                        <li style="cursor: pointer;" onclick="window.location.href='inscription_activite.php?id=<?php echo $evenement['Id_Event']; ?>'">
-                            <strong>Nom de l'activité :</strong> <?php echo htmlspecialchars($evenement['nom']); ?><br>
-                            <strong>Commentaire :</strong> <?php echo htmlspecialchars($evenement['commentaire']); ?><br>
-                            <strong>Date de début :</strong> <?php echo htmlspecialchars(date('d/m/Y H:i', strtotime($evenement['debut']))); ?><br>
-                            <strong>Date de fin :</strong> <?php echo htmlspecialchars(date('d/m/Y H:i', strtotime($evenement['fin']))); ?><br>
-                            <strong>Places disponibles :</strong> <?php echo htmlspecialchars($evenement['nb_max']); ?>
+                        <li style="cursor: pointer;" onclick="document.getElementById('form_<?php echo $evenement['Id_Event']; ?>').submit();">
+                            <form id="form_<?php echo $evenement['Id_Event']; ?>" action="inscription_activite.php" method="post">
+                                <input type="hidden" name="id_event" value="<?php echo $evenement['Id_Event']; ?>">
+                                <strong>Nom de l'activité :</strong> <?php echo htmlspecialchars($evenement['nom']); ?><br>
+                                <strong>Commentaire :</strong> <?php echo htmlspecialchars($evenement['commentaire']); ?><br>
+                                <strong>Date de début :</strong> <?php echo htmlspecialchars(date('d/m/Y H:i', strtotime($evenement['debut']))); ?><br>
+                                <strong>Date de fin :</strong> <?php echo htmlspecialchars(date('d/m/Y H:i', strtotime($evenement['fin']))); ?><br>
+                                <strong>Places disponibles :</strong> <?php echo htmlspecialchars($evenement['nb_max']); ?>
+                            </form>
                         </li>
                     <?php endforeach; ?>
                 </ul>
@@ -65,3 +68,4 @@ $stmt->close();
 <?php
 $con->close();
 ?>
+
