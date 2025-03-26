@@ -1,11 +1,12 @@
 <?php
 session_start();
-require_once '../../functions/db.php';
 require_once '../../functions/session.php';
-include '../navigation_admin.php';
-
 verifierSessionAdmin();
+
+require_once '../../functions/db.php';
 $con = getDatabase();
+
+include '../navigation_admin.php';
 
 // Récupérer la liste des enfants
 $stmt = $con->prepare('SELECT Id_enfant, nom FROM ENFANT');
