@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param('i', $id_rapport);
     if ($stmt->execute()) {
         $success_message = "Rapport supprimé avec succès !";
-        exit();
     } else {
         echo "Erreur lors de la suppression du rapport.";
     }

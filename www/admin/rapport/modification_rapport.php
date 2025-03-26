@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $stmt = $con->prepare('UPDATE RAPPORT SET Commentaire = ?, info_Comportement = ?, date = ?, Id_enfant = ? WHERE Id_rapport = ?');
     $stmt->bind_param('sssii', $commentaire, $info_comportement, $date, $id_enfant, $id_rapport);
     if ($stmt->execute()) {
-        $success_message = "Rapport ajouté avec succès !";
+        $success_message = "Rapport modifié avec succès !";
     } else {
         echo "Erreur lors de la mise à jour du rapport.";
     }
