@@ -92,10 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </option>
                 <?php endforeach; ?>
             </select><br><br>
-
-            <label for="places_disponibles">Places disponibles :</label><br>
-            <input type="number" id="places_disponibles" name="places_disponibles" required><br><br>
-
             <input type="submit" class="btn" value="Créer">
         </div>
     </form>
