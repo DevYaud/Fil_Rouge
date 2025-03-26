@@ -8,7 +8,7 @@ function verifierSessionAdmin(): void
 {
     if (!isset($_SESSION['Id_connexion'])) {
         // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-        header('Location: http://creche.zaud.org/admin/login.php');
+        header('Location: http://www.creche.zaud.org/admin/login.php');
         exit();
     }
 }
@@ -21,7 +21,7 @@ function  verifierSessionParents(): void
 {
     if (!isset($_SESSION['Id_connexion'])) {
         // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-        header('Location: http://creche.zaud.org/app/login.php');
+        header('Location: http://www.creche.zaud.org/app/login.php');
         exit();
     }
 }
