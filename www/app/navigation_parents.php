@@ -13,7 +13,7 @@ session_start();
 <body>
     <nav class="sidebar">
         <div style="padding: 15px; font-size: 22px; text-align: center">📦</div>
-        <a href="profil.php" class="nav-item">
+        <a href="./dashboard.php" class="nav-item">
             <span class="nav-icon">🏠</span>
             <span class="nav-text">Accueil</span>
         </a>
