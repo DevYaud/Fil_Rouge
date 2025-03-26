@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     </script>
 </head>
-<link rel="stylesheet" href="../menu-lateral.css">
+<link rel="stylesheet" href="../../styles/menu-lateral.css">
 <body>
 <main class="content">
     <h1>Créer un Rapport</h1>

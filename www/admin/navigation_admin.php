@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="menu-lateral.css">
+    <link rel="stylesheet" href="../styles/menu-lateral.css">
 
 </head>
 <body>
