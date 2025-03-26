@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['Id_enfant'] = $enfant['Id_enfant'];
         }
 
+        $success_message = "Rapport ajouté avec succès !";
         echo "Connexion réussie !";
         // Redirection vers le tableau de bord
         header('Location: dashboard.php');
