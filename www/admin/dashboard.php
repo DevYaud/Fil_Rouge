@@ -25,8 +25,10 @@ include 'navigation_admin.php';
         <div class="grid">
 
             <div class="box">
-                <h2>Emploi du temps</h2>
-
+                <h2>Evènements</h2>
+                <a href="./evenement/creation_evenement.php" class="btn">Créer un évènement</a>
+                <a href="./rapport/selection_evenement.php" class="btn">Modifier un évènement</a>
+                <a href="rapport/suppression_evenement.php" class="btn">Supprimer un évènement</a>
             </div>
 
             <div class="box">
