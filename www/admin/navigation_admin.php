@@ -31,7 +31,7 @@ session_start();
         <span class="nav-icon">🎯</span>
         <span class="nav-text">Création Activité</span>
     </a>
-    <a href="http://reche.zaud.org/admin/compte/creation_compte.php" class="nav-item">
+    <a href="http://creche.zaud.org/admin/compte/creation_compte.php" class="nav-item">
         <span class="nav-icon">⚙️</span>
         <span class="nav-text">Création Comptes</span>
     </a>
