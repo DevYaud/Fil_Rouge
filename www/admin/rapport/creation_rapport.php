@@ -64,23 +64,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </script>
 </head>
 <body>
-<h1>Créer un Rapport</h1>
-<form action="creation_rapport.php" method="post">
-    <label for="Commentaire">Commentaire :</label><br>
-    <textarea id="Commentaire" name="Commentaire" rows="4" cols="50" required></textarea><br><br>
+<main class="content">
+    <h1>Créer un Rapport</h1>
+    <form action="creation_rapport.php" method="post">
+        <label for="Commentaire">Commentaire :</label><br>
+        <textarea id="Commentaire" name="Commentaire" rows="4" cols="50" required></textarea><br><br>
 
-    <label for="info_Comportement">Information Comportement :</label><br>
-    <textarea id="info_Comportement" name="info_Comportement" rows="4" cols="50" required></textarea><br><br>
+        <label for="info_Comportement">Information Comportement :</label><br>
+        <textarea id="info_Comportement" name="info_Comportement" rows="4" cols="50" required></textarea><br><br>
 
-    <label for="date">Date du Rapport :</label><br>
-    <input type="date" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" required><br><br>
+        <label for="date">Date du Rapport :</label><br>
+        <input type="date" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" required><br><br>
 
-    <label for="enfant">Enfant :</label><br>
-    <select id="enfant" name="enfant" required>
-        <?php foreach ($enfants as $enfant): ?>
-            <option value="<?php echo $enfant['Id_enfant']; ?>"><?php echo htmlspecialchars($enfant['nom']); ?></option>
-        <?php endforeach; ?>
-    </select><br><br>
+        <label for="enfant">Enfant :</label><br>
+        <select id="enfant" name="enfant" required>
+            <?php foreach ($enfants as $enfant): ?>
+                <option value="<?php echo $enfant['Id_enfant']; ?>"><?php echo htmlspecialchars($enfant['nom']); ?></option>
+            <?php endforeach; ?>
+        </select><br><br>
 
     <input type="submit" value="Valider">
 </form>
@@ -90,7 +91,7 @@ if ($success_message) {
     echo "<script>showPopup('$success_message');</script>";
 }
 ?>
-
+</main>
 </body>
 </html>
 

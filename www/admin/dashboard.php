@@ -81,7 +81,7 @@ include 'navigation_admin.php';
             <div class="box">
                 <h2>Rapports</h2>
                 <a href="#" class="btn">Envoi rapport journalier</a>
-                <a href="#" class="btn">Voir tous les rapports</a>
+                <a href="#x²" class="btn">Voir tous les rapports</a>
             </div>
 
             <div class="box">
