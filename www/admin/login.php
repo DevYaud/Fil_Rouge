@@ -4,6 +4,7 @@ require_once '../functions/db.php';
 
 $con = getDatabase();
 
+$success_message ="";
 // Vérification des données du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mail = $_POST['mail'];
@@ -14,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param('ss', $mail, $password);
     $stmt->execute();
     $result = $stmt->get_result();
-    $success_message ="";
     if ($result->num_rows > 0) {
         // Récupérer les données de l'utilisateur
         $user = $result->fetch_assoc();
@@ -64,14 +64,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br>
     <button type="submit">Se connecter</button>
 </form>
-</body>
-</html>
-
 <?php
 if ($success_message) {
     echo "<script>showPopup('$success_message');</script>";
 }
 ?>
+</body>
+</html>
+
+
 
 <?php
 $con->close();

@@ -17,6 +17,7 @@ while ($row = $result->fetch_assoc()) {
 }
 $stmt->close();
 
+$success_message = "";
 // Traitement du formulaire de suppression
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_rapport = $_POST['rapport'];
@@ -25,9 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $con->prepare('DELETE FROM RAPPORT WHERE Id_rapport = ?');
     $stmt->bind_param('i', $id_rapport);
     if ($stmt->execute()) {
-        echo "Rapport supprimé avec succès !";
-        // Rediriger ou recharger la page pour mettre à jour la liste des rapports
-        header('Location: suppression_rapport.php');
+        $success_message = "Rapport supprimé avec succès !";
         exit();
     } else {
         echo "Erreur lors de la suppression du rapport.";
@@ -42,6 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <title>Suppression de Rapport</title>
     <link rel="stylesheet" href="../../styles/main.css">
+    <script>
+        function showPopup(message) {
+            alert(message);
+            window.location.href = '../dashboard.php';
+        }
+    </script>
 </head>
 <body>
 <main class="content">
@@ -57,9 +62,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </select><br><br>
     <input type="submit" value="Supprimer">
 </form>
+
 </main>
+<?php
+if ($success_message) {
+    echo "<script>showPopup('$success_message');</script>";
+}
+?>
 </body>
 </html>
+
 
 <?php
 $con->close();
