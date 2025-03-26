@@ -1,0 +1,14 @@
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
