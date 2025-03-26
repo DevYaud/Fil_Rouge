@@ -41,11 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     </script>
     <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/form.css">
 </head>
 <body>
 <main class = "content">
 <h1>Créer un Menu</h1>
 <form action="creation_menu.php" method="post">
+    <div class="form-group">
     <label for="nom">Nom du Menu :</label><br>
     <input type="text" id="nom" name="nom" required><br><br>
 
@@ -63,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <label for="id_inscription">ID Inscription :</label><br>
     <input type="number" id="id_inscription" name="id_inscription" required><br><br>
-
-    <input type="submit" value="Valider">
+    </div>
+    <input type="submit" class="btn" value="Valider">
 </form>
 
 <?php
