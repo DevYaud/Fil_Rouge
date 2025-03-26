@@ -7,25 +7,34 @@ session_start();
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Navigation</title>
+    <title></title>
     <link rel="stylesheet" href="menu-lateral.css">
-    <style>
-        .nav-link {
-            display: block;
-            margin: 10px 0;
-        }
-    </style>
+
 </head>
 <body>
-<nav>
-    <ul  class="menu-latéral">
-        <li class="nav-link"><a href="profil.php">Profil Admin</a></li>
-        <li class="nav-link"><a href="comptes.php">Gestion Comptes</a></li>
-        <li class="nav-link"><a href="activite.php">Gestion Activité</a></li>
-        <li class="nav-link"><a href="repas.php">Gestion Repas</a></li>
-        <li class="nav-link"><a href="rapport.php">Création Rapport</a></li>
-        <li class="nav-link"><a href="logout.php">Déconnexion</a></li>
-    </ul>
+<!-- Sidebar -->
+<nav class="sidebar">
+    <div style="padding: 15px; font-size: 22px; text-align: center">📦</div>
+    <a href="#" class="nav-item">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">Accueil</span>
+    </a>
+    <a href="#" class="nav-item">
+        <span class="nav-icon">💬</span>
+        <span class="nav-text">Messages</span>
+    </a>
+    <a href="#" class="nav-item">
+        <span class="nav-icon">🔔</span>
+        <span class="nav-text">Notifications</span>
+    </a>
+    <a href="#" class="nav-item">
+        <span class="nav-icon">🎯</span>
+        <span class="nav-text">Activités</span>
+    </a>
+    <a href="#" class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-text">Paramètres</span>
+    </a>
 </nav>
 </body>
 </html>
