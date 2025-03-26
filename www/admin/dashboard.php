@@ -41,21 +41,23 @@ include 'navigation_admin.php';
 
             <div class="box">
                 <h2>Gestion des Rapports</h2>
-                <a href="./rapport/creation_rapport.php" class="btn">Envoi rapport journalier</a>
-                <a href="./rapport/selection_rapport.php" class="btn">Modifier rapport journalier</a>
-                <a href="rapport/suppression_rapport.php" class="btn">Supprimer rapport journalier</a>
+                <a href="./rapport/creation_rapport.php" class="btn">Créer un rapport</a>
+                <a href="./rapport/selection_rapport.php" class="btn">Modifier un rapport existant</a>
+                <a href="rapport/suppression_rapport.php" class="btn">Supprimer un rapport existant</a>
             </div>
 
             <div class="box">
-                <h2>Messages et notifications</h2>
-                <a href="#" class="btn">Voir les messages</a>
+                <h2>Gestion des comptes</h2>
+                <a href="./compte/creation_compte.php.php" class="btn">Créer un compte</a>
+                <a href="./menu/selection_repas.php" class="btn">Modifier un compte existant</a>
+                <a href="./menu/suppression_menu.php" class="btn">Supprimer un compte existant</a>
             </div>
 
             <div class="box">
                 <h2>Gestion des menus</h2>
-                <a href="./menu/creation_menu.php" class="btn">Envoi rapport journalier</a>
-                <a href="./menu/selection_repas.php" class="btn">Modifier rapport journalier</a>
-                <a href="./menu/suppression_menu.php" class="btn">Supprimer rapport journalier</a>
+                <a href="./menu/creation_menu.php" class="btn">Créer un menu</a>
+                <a href="./menu/selection_repas.php" class="btn">Modifier un menu existant</a>
+                <a href="./menu/suppression_menu.php" class="btn">Supprimer un menu existant</a>
             </div>
         </div>
     </div>
