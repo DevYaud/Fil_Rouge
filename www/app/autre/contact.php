@@ -57,7 +57,7 @@ $email = $_SESSION['mail'];
         $sujet = $_POST['sujet'];
         $message = $_POST['message'];
 
-        // Afficher les informations soumises (à des fins de démonstration)
+        // Afficher les informations soumises -> Pas d'envoi de mail pour l'instant
         echo "<h2>Informations soumises :</h2>";
         echo "<p><strong>Nom :</strong> " . htmlspecialchars($nom) . "</p>";
         echo "<p><strong>Email :</strong> " . htmlspecialchars($email) . "</p>";
