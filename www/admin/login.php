@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <label for="password">Mot de passe :</label>
     <input type="password" id="password" name="password" required>
     <br>
-    <button type="submit">Se connecter</button>
+    <button class="btn" type="submit">Se connecter</button>
 </form>
 <?php
 if ($success_message) {
