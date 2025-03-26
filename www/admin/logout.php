@@ -17,6 +17,6 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Rediriger vers la page vitrine'
-header('Location: ./index.php');
+header('Location: ./index.html');
 exit();
 ?>
