@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['repas'])) {
     exit();
 }
 
+$success_message = "";
 // Traitement du formulaire de modification
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $nom = $_POST['nom'];
@@ -38,10 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $stmt = $con->prepare('UPDATE REPAS SET nom = ?, entrée = ?, plat = ?, dessert = ?, date = ?, ID_inscription = ? WHERE Id_repas = ?');
     $stmt->bind_param('sssssii', $nom, $entree, $plat, $dessert, $date, $id_inscription, $id_repas);
     if ($stmt->execute()) {
-        echo "Repas mis à jour avec succès !";
-        // Rediriger ou recharger la page pour mettre à jour les informations
-        header('Location: selection_repas.php');
-        exit();
+        $success_message = "Rapport ajouté avec succès !";
     } else {
         echo "Erreur lors de la mise à jour du repas.";
     }
@@ -56,6 +54,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     <title>Modification de Repas</title>
     <link rel="stylesheet" href="../../styles/main.css">
     <link rel="stylesheet" href="../../styles/form.css">
+    <script>
+        function showPopup(message) {
+            alert(message);
+            window.location.href = '../dashboard.php';
+        }
+    </script>
 </head>
 <body>
 <main class="content">
@@ -84,6 +88,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
             <input type="submit" class="btn" name="update" value="Mettre à jour">
     </form>
 </main>
+<?php
+if ($success_message) {
+    echo "<script>showPopup('$success_message');</script>";
+}
+?>
 </body>
 </html>
 

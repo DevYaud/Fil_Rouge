@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['rapport'])) {
     exit();
 }
 
+$success_message = "";
 // Traitement du formulaire de modification
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $commentaire = $_POST['Commentaire'];
@@ -36,10 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $stmt = $con->prepare('UPDATE RAPPORT SET Commentaire = ?, info_Comportement = ?, date = ?, Id_enfant = ? WHERE Id_rapport = ?');
     $stmt->bind_param('sssii', $commentaire, $info_comportement, $date, $id_enfant, $id_rapport);
     if ($stmt->execute()) {
-        echo "Rapport mis à jour avec succès !";
-        // Rediriger ou recharger la page pour mettre à jour les informations
-        header('Location: selection_rapport.php');
-        exit();
+        $success_message = "Rapport ajouté avec succès !";
     } else {
         echo "Erreur lors de la mise à jour du rapport.";
     }
@@ -64,6 +62,12 @@ $stmt->close();
     <title>Modification de Rapport</title>
     <link rel="stylesheet" href="../../styles/main.css">
     <link rel="stylesheet" href="../../styles/form.css">
+    <script>
+        function showPopup(message) {
+            alert(message);
+            window.location.href = '../dashboard.php';
+        }
+    </script>
 </head>
 <body>
 <main class="content">
@@ -91,6 +95,11 @@ $stmt->close();
     <input type="submit" name="update" value="Mettre à jour">
 </form>
 </main>
+<?php
+if ($success_message) {
+    echo "<script>showPopup('$success_message');</script>";
+}
+?>
 </body>
 </html>
 

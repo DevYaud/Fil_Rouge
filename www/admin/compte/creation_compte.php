@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <meta charset="UTF-8">
         <title>Création de Compte</title>
         <link rel="stylesheet" href="../../styles/main.css">
+        <link rel="stylesheet" href="../../styles/form.css">
         <script>
             function showPopup(message) {
                 alert(message);
