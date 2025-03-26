@@ -38,6 +38,8 @@ include 'navigation_admin.php';
             <div class="box">
                 <h2>Gestion des activités</h2>
                 <a href="./activite/creation_activite.php" class="btn">Créer une activité</a>
+                <a href="./activite/selection_activite.php" class="btn">Modifier une activité</a>
+                <a href="./activite/suppression_activite.php" class="btn">Supprimer une activité</a>
             </div>
 
             <div class="box">
