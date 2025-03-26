@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/form.css">
     <script>
         function showPopup(message) {
             alert(message);
@@ -51,12 +52,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </script>
 </head>
 <body>
-<h2>Connexion</h2>
+<div style="width: 400px;" class="container">
+<h2>Connexion :</h2>
 <?php if (isset($error_message)): ?>
     <p style="color: red;"><?php echo $error_message; ?></p>
 <?php endif; ?>
 <form action="login.php" method="POST">
-    <div class="form-group">
+
+    <div style="width: 400px ;" class="form-group">
         <label for="mail">Email :</label>
         <input type="email" id="mail" name="mail" required>
         <br>
@@ -64,8 +67,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="password" id="password" name="password" required>
         <br>
     </div>
-    <button class="btn" type="submit">Se connecter</button>
+    <button class="btn" style="margin: auto" type="submit">Se connecter</button>
 </form>
+</div>>
 <?php
 if ($success_message) {
     echo "<script>showPopup('$success_message');</script>";
