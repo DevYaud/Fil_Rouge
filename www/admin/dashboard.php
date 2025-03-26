@@ -40,7 +40,7 @@ include 'navigation_admin.php';
             </div>
 
             <div class="box">
-                <h2>Rapports</h2>
+                <h2>Gestion des Rapports</h2>
                 <a href="./rapport/creation_rapport.php" class="btn">Envoi rapport journalier</a>
                 <a href="./rapport/selection_rapport.php" class="btn">Modifier rapport journalier</a>
                 <a href="rapport/suppression_rapport.php" class="btn">Supprimer rapport journalier</a>
@@ -53,8 +53,9 @@ include 'navigation_admin.php';
 
             <div class="box">
                 <h2>Gestion des menus</h2>
-                <a href="Menu-manager.html" class="btn">Gestionnaire des menus</a>
-                <a href="#" class="btn">Planificateur de repas</a>
+                <a href="./menu/creation_menu.php" class="btn">Envoi rapport journalier</a>
+                <a href="./menu/selection_repas.php" class="btn">Modifier rapport journalier</a>
+                <a href="./menu/suppression_menu.php" class="btn">Supprimer rapport journalier</a>
             </div>
         </div>
     </div>
