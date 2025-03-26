@@ -44,7 +44,7 @@ $stmt->close();
                         <strong>Date :</strong> <?php echo htmlspecialchars($rapport['date']); ?><br>
                         <strong>Commentaire :</strong> <?php echo htmlspecialchars($rapport['Commentaire']); ?><br>
                         <strong>Information Comportement :</strong> <?php echo htmlspecialchars($rapport['info_Comportement']); ?><br />
-
+                        <div style="padding-top: 20px">  </div>
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
