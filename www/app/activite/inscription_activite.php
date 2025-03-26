@@ -6,7 +6,7 @@ verifierSessionParents();
 require_once '../../functions/db.php';
 $con = getDatabase();
 
-include '../navigation_parents.php';
+
 
 // Vérifier si un ID d'événement est passé en paramètre
 if (isset($_GET['id'])) {
@@ -30,6 +30,8 @@ if (isset($_GET['id'])) {
     exit();
 }
 ?>
+
+<?php include '../navigation_parents.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">

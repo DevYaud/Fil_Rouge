@@ -13,7 +13,7 @@ $date_j_plus_7 = date('Y-m-d H:i:s', strtotime('+7 days'));
 
 // Récupérer les événements disponibles entre aujourd'hui et J+7
 $stmt = $con->prepare('
-    SELECT E.Id_Event, E.commentaire, E.debut, E.fin, A.nom, E.places_disponibles
+    SELECT E.Id_Event, E.commentaire, E.debut, E.fin, A.nom, A.nb_max
     FROM EVENEMENT E
     JOIN ACTIVITE A ON E.Id_activite = A.Id_activite
     WHERE E.debut BETWEEN NOW() AND ?
@@ -51,7 +51,7 @@ $stmt->close();
                             <strong>Commentaire :</strong> <?php echo htmlspecialchars($evenement['commentaire']); ?><br>
                             <strong>Date de début :</strong> <?php echo htmlspecialchars(date('d/m/Y H:i', strtotime($evenement['debut']))); ?><br>
                             <strong>Date de fin :</strong> <?php echo htmlspecialchars(date('d/m/Y H:i', strtotime($evenement['fin']))); ?><br>
-                            <strong>Places disponibles :</strong> <?php echo htmlspecialchars($evenement['places_disponibles']); ?>
+                            <strong>Places disponibles :</strong> <?php echo htmlspecialchars($evenement['nb_max']); ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>
