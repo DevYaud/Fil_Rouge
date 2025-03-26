@@ -22,6 +22,34 @@ $stmt->close();
         <meta charset="UTF-8">
         <title>Sélection de Rapport</title>
         <link rel="stylesheet" href="../../styles/main.css">
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            th {
+                text-align: left;
+                padding: 10px;
+                background-color: #63719562;
+                font-size: 16px;
+            }
+
+            td {
+                padding: 12px;
+                border-bottom: 1px solid #271b4b;
+            }
+
+            tr {
+                cursor: pointer;
+                transition: background-color 0.2s ease;
+            }
+
+            tr:hover {
+                background-color: #e2e2f0;
+            }
+        </style>
     </head>
     <body>
     <h1>Sélectionner un Rapport à Modifier</h1>
