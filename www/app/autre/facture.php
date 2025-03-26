@@ -1,12 +1,12 @@
 <?php
 session_start();
-require_once '../functions/session.php';
+require_once '../../functions/session.php';
 verifierSessionParents();
 
-require_once '../functions/db.php';
+require_once '../../functions/db.php';
 $con = getDatabase();
 
-include 'navigation_parents.php';
+include '../navigation_parents.php';
 
 // Récupérer l'ID du tuteur à partir de la session
 $id_connexion = $_SESSION['Id_connexion'];
@@ -40,7 +40,7 @@ $stmt->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facturation</title>
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../../styles/main.css">
 </head>
 <body>
 <main class="content">
