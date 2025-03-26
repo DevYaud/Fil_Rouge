@@ -35,8 +35,9 @@ include 'navigation_admin.php';
 
             <div class="box">
                 <h2>Rapports</h2>
-                <a href="#" class="btn">Envoi rapport journalier</a>
-                <a href="#x²" class="btn">Voir tous les rapports</a>
+                <a href="./rapport/creation_rapport.php" class="btn">Envoi rapport journalier</a>
+                <a href="./rapport/selection_rapport.php" class="btn">Modifier rapport journalier</a>
+                <a href="./rapport/supression_rapport.php" class="btn">Supprimer rapport journalier</a>
             </div>
 
             <div class="box">
