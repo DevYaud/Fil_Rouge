@@ -41,11 +41,10 @@ $stmt->close();
             <?php else: ?>
                 <ul>
                     <?php foreach ($rapports as $rapport): ?>
-                        <li>
-                            <strong>Date :</strong> <?php echo htmlspecialchars($rapport['date']); ?><br>
-                            <strong>Commentaire :</strong> <?php echo htmlspecialchars($rapport['Commentaire']); ?><br>
-                            <strong>Information Comportement :</strong> <?php echo htmlspecialchars($rapport['info_Comportement']); ?>
-                        </li>
+                        <strong>Date :</strong> <?php echo htmlspecialchars($rapport['date']); ?><br>
+                        <strong>Commentaire :</strong> <?php echo htmlspecialchars($rapport['Commentaire']); ?><br>
+                        <strong>Information Comportement :</strong> <?php echo htmlspecialchars($rapport['info_Comportement']); ?>
+                        <br>
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
