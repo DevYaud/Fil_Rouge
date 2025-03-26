@@ -55,31 +55,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     <meta charset="UTF-8">
     <title>Modification de Repas</title>
     <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/form.css">
 </head>
 <body>
 <main class="content">
     <h1>Modifier un Repas</h1>
     <form action="modification_repas.php" method="post">
-        <input type="hidden" name="repas" value="<?php echo $id_repas; ?>">
-        <label for="nom">Nom du Repas :</label><br>
-        <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($repas['nom']); ?>" required><br><br>
+        <div class="form-group">
+            <input type="hidden" name="repas" value="<?php echo $id_repas; ?>">
+            <label for="nom">Nom du Repas :</label><br>
+            <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($repas['nom']); ?>" required><br><br>
 
-        <label for="entree">Entrée :</label><br>
-        <input type="text" id="entree" name="entree" value="<?php echo htmlspecialchars($repas['entrée']); ?>" required><br><br>
+            <label for="entree">Entrée :</label><br>
+            <input type="text" id="entree" name="entree" value="<?php echo htmlspecialchars($repas['entrée']); ?>" required><br><br>
 
-        <label for="plat">Plat :</label><br>
-        <input type="text" id="plat" name="plat" value="<?php echo htmlspecialchars($repas['plat']); ?>" required><br><br>
+            <label for="plat">Plat :</label><br>
+            <input type="text" id="plat" name="plat" value="<?php echo htmlspecialchars($repas['plat']); ?>" required><br><br>
 
-        <label for="dessert">Dessert :</label><br>
-        <input type="text" id="dessert" name="dessert" value="<?php echo htmlspecialchars($repas['dessert']); ?>" required><br><br>
+            <label for="dessert">Dessert :</label><br>
+            <input type="text" id="dessert" name="dessert" value="<?php echo htmlspecialchars($repas['dessert']); ?>" required><br><br>
 
-        <label for="date">Date :</label><br>
-        <input type="date" id="date" name="date" value="<?php echo $repas['date']; ?>" required><br><br>
+            <label for="date">Date :</label><br>
+            <input type="date" id="date" name="date" value="<?php echo $repas['date']; ?>" required><br><br>
 
-        <label for="id_inscription">ID Inscription :</label><br>
-        <input type="number" id="id_inscription" name="id_inscription" value="<?php echo $repas['ID_inscription']; ?>" required><br><br>
-
-        <input type="submit" name="update" value="Mettre à jour">
+            <label for="id_inscription">ID Inscription :</label><br>
+            <input type="number" id="id_inscription" name="id_inscription" value="<?php echo $repas['ID_inscription']; ?>" required><br><br>
+        </div>
+            <input type="submit" class="btn" name="update" value="Mettre à jour">
     </form>
 </main>
 </body>
