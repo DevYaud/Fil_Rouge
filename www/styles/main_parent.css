@@ -10,7 +10,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: 64px;
-    background-color: rgba(93, 161, 91, 0.89);
+    background-color: rgba(98, 142, 98, 0.89);
     color: white;
     transition: width 0.3s ease-in-out;
     overflow: hidden;
@@ -82,7 +82,7 @@ body {
     display: block;
     margin-top: 10px;
     padding: 10px;
-    background: #00ff04;
+    background: #5DA15BE2;
     color: white;
     text-align: center;
     text-decoration: none;
