@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centre Aéré Les Bambins</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #ffffff);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        main {
+            flex: 1;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .illustration {
+            max-width: 300px;
+            margin: 0 auto 1.5rem auto;
+        }
+        main h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        main p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background-color: #00796b;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn:hover {
+            background-color: #004d40;
+            transform: scale(1.05);
+        }
+        .presentation {
+            max-width: 900px;
+            margin: 3rem auto;
+            text-align: left;
+        }
+        .presentation h1 {
+            font-size: 1.5rem;
+            color: #00796b;
+        }
+        .presentation ul {
+            margin-bottom: 2rem;
+            padding-left: 1.2rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #004d40;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            main h2 {
+                font-size: 1.5rem;
+            }
+            .presentation h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Centre Aéré Les Bambins</h1>
+    </header>
+    <main>
+        <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png" alt="Illustration enfants" class="illustration">
+        <h2>Un lieu d'épanouissement pour vos enfants</h2>
+        <p>
+            Bienvenue sur le site du centre aéré <strong>Les Bambins</strong>. Découvrez un espace dédié à la découverte, au jeu, à l'apprentissage et à l'éveil des plus petits. Parents et personnel peuvent accéder à leurs espaces respectifs via les boutons ci-dessous.
+        </p>
+        <div class="button-container">
+            <button class="btn" onclick="window.location.href='./login/parent'">Espace Parents</button>
+            <button class="btn" onclick="window.location.href='/login/personnel'">Espace Personnel</button>
+        </div>
+
+        <div class="presentation">
+            <h1>Bienvenue au Centre Aéré Les Bambins</h1>
+
+            <h1>Notre Engagement pour l'Accueil et l'Encadrement</h1>
+            <ul>
+                <li>Nous offrons un cadre sécurisé et bienveillant pour vos enfants.</li>
+                <li>Nous favorisons leur intégration et leur bien-être dans un environnement adapté à leurs besoins.</li>
+            </ul>
+
+            <h1>Un Développement et un Épanouissement Assurés</h1>
+            <ul>
+                <li>Nous proposons une large gamme d'activités : sport, culture, arts et découvertes.</li>
+                <li>Nous stimulons la curiosité et les compétences de chaque enfant à travers des expériences enrichissantes.</li>
+            </ul>
+
+            <h1>Priorité à la Sécurité et au Bien-Être</h1>
+            <ul>
+                <li>Nous garantissons un encadrement de qualité assurant la sécurité physique et émotionnelle de tous les enfants.</li>
+                <li>Nous portons une attention particulière aux besoins spécifiques et au bien-être de chacun.</li>
+            </ul>
+
+            <h1>Une Communication Transparente avec les Parents</h1>
+            <ul>
+                <li>Nous informons régulièrement les familles sur les activités et le bien-être de leurs enfants.</li>
+                <li>Nous facilitons les échanges à travers des comptes rendus et des rencontres régulières.</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 Centre Aéré Les Bambins - Cette page a été généré avec ChatGPT.
+    </footer>
+</body>
+</html>
