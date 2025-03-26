@@ -3,13 +3,13 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     }
 /* Pour les formulaires avec champs consécutifs : */
 .form-group {
     margin-bottom: 15px;
     align-items: center ;
     justify-content: center;
+    width: 60%;
 }
 
 .form-group label {
