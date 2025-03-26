@@ -30,8 +30,9 @@ include 'navigation_admin.php';
             </div>
 
             <div class="box">
-                <h2>Présence</h2>
-                <a href=" " class="btn">Gérer les enfants</a>
+                <h2>Informations de connexion :</h2>
+                <p class="btn"><strong>Email :</strong> <?php echo htmlspecialchars($_SESSION['mail']); ?></p>
+                <p class="btn"><strong>ID Connexion :</strong> <?php echo htmlspecialchars($_SESSION['Id_connexion']); ?></p>
             </div>
 
             <div class="box">
