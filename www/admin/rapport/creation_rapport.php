@@ -2,7 +2,6 @@
 session_start();
 include '../navigation_admin.php';
 
-verifierSession();
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'sc1zuna1689';
 $DATABASE_PASS = 'fil_rouge_projet';
@@ -56,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Création de Rapport</title>
-    <link rel="stylesheet" href="../../styles/main.css">
     <script>
         function showPopup(message) {
             alert(message);
