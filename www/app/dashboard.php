@@ -37,29 +37,26 @@ include 'navigation_parents.php';
 
             <div class="box">
                 <h2>Gestion des activités</h2>
-                <a href=".//creation_activite.php" class="btn">Inscription</a>
-                <a href="./activite/selection_activite.php" class="btn">Désinscription</a>
+                <a href="./activite/inscription_activite.php" class="btn">Inscription</a>
+                <a href="./activite/desinscription_activite.php" class="btn">Désinscription</a>
             </div>
 
             <div class="box">
-                <h2>Gestion des Rapports</h2>
-                <a href="./rapport/creation_rapport.php" class="btn">Créer un rapport</a>
-                <a href="./rapport/selection_rapport.php" class="btn">Modifier un rapport existant</a>
-                <a href="rapport/suppression_rapport.php" class="btn">Supprimer un rapport existant</a>
+                <h2>Rapports</h2>
+                <a href="./rapport/liste_rapport.php.php" class="btn">Accéder aux rapports</a>
             </div>
 
             <div class="box">
-                <h2>Gestion des comptes</h2>
-                <a href="./compte/creation_compte.php" class="btn">Créer un compte</a>
-                <a href="./menu/selection_menu.php" class="btn">Modifier un compte existant</a>
-                <a href="./menu/suppression_menu.php" class="btn">Supprimer un compte existant</a>
+                <h2>Gestion des repas</h2>
+                <a href="./repas/inscription_repas.php" class="btn">Inscription</a>
+                <a href="./repas/desinscription_repas.php" class="btn">Désinscription</a>
             </div>
 
             <div class="box">
-                <h2>Gestion des menus</h2>
-                <a href="./menu/creation_menu.php" class="btn">Créer un menu</a>
-                <a href="./menu/selection_menu.php" class="btn">Modifier un menu existant</a>
-                <a href="./menu/suppression_menu.php" class="btn">Supprimer un menu existant</a>
+                <h2>Autres</h2>
+                <a href="./autre/contact.php" class="btn">Contactez l'établissement</a>
+                <a href="./autre/facture.php" class="btn">Factures</a>
+                <a href="./autre/notation.php" class="btn">Enquête satisfaction</a>
             </div>
         </div>
     </div>

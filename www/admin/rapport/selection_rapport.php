@@ -8,7 +8,7 @@ $con = getDatabase();
 
 include '../navigation_admin.php';
 
-// Récupérer la liste des rapports avec les noms des enfants
+// Récupérer la liste des rapport avec les noms des enfants
 $stmt = $con->prepare('
     SELECT R.Id_rapport, R.Commentaire, E.nom
     FROM RAPPORT R

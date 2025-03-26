@@ -8,7 +8,7 @@ $con = getDatabase();
 
 include '../navigation_admin.php';
 
-// Récupérer la liste des rapports
+// Récupérer la liste des rapport
 $stmt = $con->prepare('SELECT Id_rapport, Commentaire FROM RAPPORT');
 $stmt->execute();
 $result = $stmt->get_result();
