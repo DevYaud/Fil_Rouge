@@ -66,8 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <label for="date">Date :</label><br>
     <input type="date" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" required><br><br>
-    </div>
+
     <input type="submit" class="btn" value="Valider">
+    </div>
 </form>
 
 <?php
