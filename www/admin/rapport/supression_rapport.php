@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'navigation_admin.php';
+include '../navigation_admin.php';
 
 
 // Vérifier si l'utilisateur est connecté

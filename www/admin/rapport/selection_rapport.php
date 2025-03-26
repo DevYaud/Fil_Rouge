@@ -1,14 +1,14 @@
 <?php
 session_start();
 
+include '../navigation_admin.php';
+
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['Id_connexion'])) {
     // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     header('Location: ../login.php');
     exit();
 }
-
-include 'navigation_admin.php';
 
 // Informations de connexion à la base de données
 $DATABASE_HOST = 'localhost';

@@ -8,7 +8,7 @@ if (!isset($_SESSION['Id_connexion'])) {
     exit();
 }
 
-include 'navigation_admin.php';
+include '../navigation_admin.php';
 
 // Informations de connexion à la base de données
 $DATABASE_HOST = 'localhost';
