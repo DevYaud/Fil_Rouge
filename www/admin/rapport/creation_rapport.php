@@ -32,6 +32,7 @@ while ($row = $result->fetch_assoc()) {
 $stmt->close();
 
 // Traitement du formulaire
+$success_message = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $commentaire = $_POST['Commentaire'];
     $info_comportement = $_POST['info_Comportement'];
@@ -42,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $con->prepare('INSERT INTO RAPPORT (Commentaire, info_Comportement, date, Id_enfant) VALUES (?, ?, ?, ?)');
     $stmt->bind_param('sssi', $commentaire, $info_comportement, $date, $id_enfant);
     if ($stmt->execute()) {
-        echo "Rapport ajouté avec succès !";
+        $success_message = "Rapport ajouté avec succès !";
     } else {
         echo "Erreur lors de l'ajout du rapport : " . $stmt->error;
     }
@@ -55,6 +56,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Création de Rapport</title>
+    <script>
+        function showPopup(message) {
+            alert(message);
+            window.location.href = '../dashboard.php';
+        }
+    </script>
 </head>
 <body>
 <h1>Créer un Rapport</h1>
@@ -77,9 +84,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <input type="submit" value="Valider">
 </form>
+
+<?php
+if ($success_message) {
+    echo "<script>showPopup('$success_message');</script>";
+}
+?>
+
 </body>
 </html>
 
 <?php
 $con->close();
 ?>
+
