@@ -1,11 +1,12 @@
 <?php
 session_start();
-include '../navigation_admin.php';
-require_once '../../functions/db.php';
 require_once '../../functions/session.php';
-
 verifierSessionAdmin();
+
+require_once '../../functions/db.php';
 $con = getDatabase();
+
+include '../navigation_admin.php';
 
 // Vérifier si un rapport a été sélectionné
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['rapport'])) {

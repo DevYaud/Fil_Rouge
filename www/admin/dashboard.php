@@ -1,9 +1,10 @@
 <?php
-//session_start();
-include 'navigation_admin.php';
+session_start();
 require_once '../functions/session.php';
-
 verifierSessionAdmin();
+
+require_once '../functions/db.php';
+$con = getDatabase();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
