@@ -64,6 +64,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/form.css">
 </head>
 <body>
 
@@ -72,13 +74,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p style="color: red;"><?php echo $error_message; ?></p>
 <?php endif; ?>
 <form action="login.php" method="POST">
-    <label for="mail">Email :</label>
-    <input type="email" id="mail" name="mail" required>
-    <br>
-    <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="password" required>
-    <br>
-    <button type="submit">Se connecter</button>
+    <div style="width: 400px ;" class="form-group">
+        <label for="mail">Email :</label>
+        <input type="email" id="mail" name="mail" required>
+        <br>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+    </div>
+    <button class="btn" style="margin: auto" type="submit">Se connecter</button>
 </form>
 </body>
 </html>
