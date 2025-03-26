@@ -36,8 +36,8 @@ include 'navigation_admin.php';
             </div>
 
             <div class="box">
-                <h2>Activités en cours</h2>
-                <a href="#" class="btn">Gérer les activités</a>
+                <h2>Gestion des activités</h2>
+                <a href="./activite/creation_activite.php" class="btn">Créer une activité</a>
             </div>
 
             <div class="box">
