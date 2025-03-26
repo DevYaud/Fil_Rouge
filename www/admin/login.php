@@ -56,12 +56,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <p style="color: red;"><?php echo $error_message; ?></p>
 <?php endif; ?>
 <form action="login.php" method="POST">
-    <label for="mail">Email :</label>
-    <input type="email" id="mail" name="mail" required>
-    <br>
-    <label for="password">Mot de passe :</label>
-    <input type="password" id="password" name="password" required>
-    <br>
+    <div class="form-group">
+        <label for="mail">Email :</label>
+        <input type="email" id="mail" name="mail" required>
+        <br>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+    </div>
     <button class="btn" type="submit">Se connecter</button>
 </form>
 <?php
