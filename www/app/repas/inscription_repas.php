@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once '../functions/session.php';
+require_once './www/functions/session.php';
 verifierSessionParents();
 
-require_once '../functions/db.php';
+require_once './www/functions/db.php';
 $con = getDatabase();
 
-include 'navigation_parents.php';
+include '../navigation_parents.php';
 ?>
