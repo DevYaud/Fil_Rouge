@@ -19,14 +19,14 @@ while ($row = $result->fetch_assoc()) {
 $stmt->close();
 
 // Récupérer la liste du personnel
-$stmt = $con->prepare('SELECT Id_personnel, nom FROM PERSONNEL');
-$stmt->execute();
-$result = $stmt->get_result();
+$stmt2 = $con->prepare('SELECT Id_personnel, nom FROM PERSONNEL');
+$stmt2->execute();
+$result = $stmt2->get_result();
 $personnels = [];
 while ($row = $result->fetch_assoc()) {
-    $personnel[] = $row;
+    $personnels[] = $row;
 }
-$stmt->close();
+$stmt2->close();
 
 // Traitement du formulaire
 $success_message = "";
