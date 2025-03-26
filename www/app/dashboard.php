@@ -20,7 +20,7 @@ include 'navigation_parents.php';
 <body>
 <main class="content">
     <div class="container">
-        <h1 class="text-center">Tableau de bord - Personnel</h1>
+        <h1 class="text-center">Tableau de bord - Parent</h1>
 
         <div class="grid">
 
