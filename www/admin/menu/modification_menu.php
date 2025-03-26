@@ -6,7 +6,7 @@ verifierSessionAdmin();
 require_once '../../functions/db.php';
 $con = getDatabase();
 
-include '../navigation_admin.php';
+
 
 // Vérifier si un repas a été sélectionné
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['repas'])) {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['repas'])) {
     $stmt->close();
 } else {
     // Rediriger vers la page de sélection si aucun repas n'est sélectionné
-    header('Location: selection_repas.php');
+    header('Location: selection_menu.php');
     exit();
 }
 
@@ -62,9 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     </script>
 </head>
 <body>
+<?php include '../navigation_admin.php';?>
 <main class="content">
     <h1>Modifier un Repas</h1>
-    <form action="modification_repas.php" method="post">
+    <form action="modification_menu.php" method="post">
         <div class="form-group">
             <input type="hidden" name="repas" value="<?php echo $id_repas; ?>">
             <label for="nom">Nom du Repas :</label><br>

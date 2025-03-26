@@ -39,7 +39,7 @@ $stmt->close();
         <?php foreach ($repas as $repas_item): ?>
             <tr style="cursor: pointer;" onclick="document.getElementById('form_<?php echo $repas_item['Id_repas']; ?>').submit();">
                 <td>
-                    <form id="form_<?php echo $repas_item['Id_repas']; ?>" action="modification_repas.php" method="post">
+                    <form id="form_<?php echo $repas_item['Id_repas']; ?>" action="modification_menu.php" method="post">
                         <input type="hidden" name="repas" value="<?php echo $repas_item['Id_repas']; ?>">
                         <?php echo htmlspecialchars("Repas #{$repas_item['Id_repas']}: {$repas_item['nom']}"); ?>
                     </form>

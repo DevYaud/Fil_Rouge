@@ -49,14 +49,14 @@ include 'navigation_admin.php';
             <div class="box">
                 <h2>Gestion des comptes</h2>
                 <a href="./compte/creation_compte.php" class="btn">Créer un compte</a>
-                <a href="./menu/selection_repas.php" class="btn">Modifier un compte existant</a>
+                <a href="./menu/selection_menu.php" class="btn">Modifier un compte existant</a>
                 <a href="./menu/suppression_menu.php" class="btn">Supprimer un compte existant</a>
             </div>
 
             <div class="box">
                 <h2>Gestion des menus</h2>
                 <a href="./menu/creation_menu.php" class="btn">Créer un menu</a>
-                <a href="./menu/selection_repas.php" class="btn">Modifier un menu existant</a>
+                <a href="./menu/selection_menu.php" class="btn">Modifier un menu existant</a>
                 <a href="./menu/suppression_menu.php" class="btn">Supprimer un menu existant</a>
             </div>
         </div>
