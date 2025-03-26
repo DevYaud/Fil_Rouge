@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../styles/form.css">
 </head>
 <body>
-
+<div style="width: 400px;" class="container">
 <h2>Connexion</h2>
 <?php if (isset($error_message)): ?>
     <p style="color: red;"><?php echo $error_message; ?></p>
@@ -84,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <button class="btn" style="margin: auto" type="submit">Se connecter</button>
 </form>
+</div>
 </body>
 </html>
 
