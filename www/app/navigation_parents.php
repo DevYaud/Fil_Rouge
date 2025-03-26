@@ -17,7 +17,7 @@ session_start();
             <span class="nav-icon">🏠</span>
             <span class="nav-text">Accueil</span>
         </a>
-        <a href="activite/selection_activite.php" class="nav-item">
+        <a href="/www/app/activite/inscription_activite.php" class="nav-item">
             <span class="nav-icon">🎯</span>
             <span class="nav-text">Activités</span>
         </a>
