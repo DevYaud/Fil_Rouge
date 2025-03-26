@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id_event'])) {
 
     // Requête d'ajout de l'inscription
     $stmt = $con->prepare('INSERT INTO INSCRIPTION (date_inscription, presence, Id_enfant, Id_Event) VALUES (?, ?, ?, ?)');
-    $stmt->bind_param('siiii', $date_inscription, $presence, $id_enfant, $id_event);
+    $stmt->bind_param('siii', $date_inscription, $presence, $id_enfant, $id_event);
     if ($stmt->execute()) {
         $success_message = "Inscription réussie !";
     } else {
@@ -60,4 +60,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id_event'])) {
 <?php
 $con->close();
 ?>
+
 
