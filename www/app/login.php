@@ -4,11 +4,7 @@ session_start();
 require_once '../functions/db.php';
 $con = getDatabase();
 
-include './navigation_parents.php';
-
-
-$con = getDatabase();
-
+$success_message ="";
 if (mysqli_connect_errno()) {
     exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
@@ -57,7 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -66,6 +61,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Login</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/form.css">
+    <script>
+        function showPopup(message) {
+            alert(message);
+            window.location.href = 'dashboard.php';
+        }
+    </script>
 </head>
 <body>
 <div style="width: 400px;" class="container">
@@ -85,6 +86,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <button class="btn" style="margin: auto" type="submit">Se connecter</button>
 </form>
 </div>
+<?php
+if ($success_message) {
+    echo "<script>showPopup('$success_message');</script>";
+}
+?>
 </body>
 </html>
 
