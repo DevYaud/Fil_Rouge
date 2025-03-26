@@ -6,6 +6,7 @@
  */
 function getDatabase()
 {
+    session_start();
     $DATABASE_HOST = 'localhost';
     $DATABASE_USER = 'sc1zuna1689';
     $DATABASE_PASS = 'fil_rouge_projet';
@@ -25,3 +26,4 @@ function getDatabase()
     }
     return $con;
 }
+
