@@ -6,7 +6,7 @@ verifierSessionAdmin();
 require_once '../../functions/db.php';
 $con = getDatabase();
 
-
+include '../navigation_admin.php';
 
 // Vérifier si un repas a été sélectionné
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['repas'])) {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['repas'])) {
     $stmt->close();
 } else {
     // Rediriger vers la page de sélection si aucun repas n'est sélectionné
-    header('Location: selection_menu.php');
+    header('Location: selection_repas.php');
     exit();
 }
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $stmt = $con->prepare('UPDATE REPAS SET nom = ?, entrée = ?, plat = ?, dessert = ?, date = ?, ID_inscription = ? WHERE Id_repas = ?');
     $stmt->bind_param('sssssii', $nom, $entree, $plat, $dessert, $date, $id_inscription, $id_repas);
     if ($stmt->execute()) {
-        $success_message = "Repas modifié avec succès !";
+        $success_message = "Repas mis à jour avec succès !";
     } else {
         echo "Erreur lors de la mise à jour du repas.";
     }
@@ -62,31 +62,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     </script>
 </head>
 <body>
-<?php include '../navigation_admin.php';?>
 <main class="content">
     <h1>Modifier un Repas</h1>
     <form action="modification_menu.php" method="post">
-        <div class="form-group">
-            <input type="hidden" name="repas" value="<?php echo $id_repas; ?>">
-            <label for="nom">Nom du Repas :</label><br>
-            <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($repas['nom']); ?>" required><br><br>
+        <input type="hidden" name="repas" value="<?php echo $id_repas; ?>">
+        <label for="nom">Nom du Repas :</label><br>
+        <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($repas['nom']); ?>" required><br><br>
 
-            <label for="entree">Entrée :</label><br>
-            <input type="text" id="entree" name="entree" value="<?php echo htmlspecialchars($repas['entree']); ?>" required><br><br>
+        <label for="entree">Entrée :</label><br>
+        <input type="text" id="entree" name="entree" value="<?php echo htmlspecialchars($repas['entrée']); ?>" required><br><br>
 
-            <label for="plat">Plat :</label><br>
-            <input type="text" id="plat" name="plat" value="<?php echo htmlspecialchars($repas['plat']); ?>" required><br><br>
+        <label for="plat">Plat :</label><br>
+        <input type="text" id="plat" name="plat" value="<?php echo htmlspecialchars($repas['plat']); ?>" required><br><br>
 
-            <label for="dessert">Dessert :</label><br>
-            <input type="text" id="dessert" name="dessert" value="<?php echo htmlspecialchars($repas['dessert']); ?>" required><br><br>
+        <label for="dessert">Dessert :</label><br>
+        <input type="text" id="dessert" name="dessert" value="<?php echo htmlspecialchars($repas['dessert']); ?>" required><br><br>
 
-            <label for="date">Date :</label><br>
-            <input type="date" id="date" name="date" value="<?php echo $repas['date']; ?>" required><br><br>
+        <label for="date">Date :</label><br>
+        <input type="date" id="date" name="date" value="<?php echo $repas['date']; ?>" required><br><br>
 
-            <label for="id_inscription">ID Inscription :</label><br>
-            <input type="number" id="id_inscription" name="id_inscription" value="<?php echo $repas['ID_inscription']; ?>" required><br><br>
-        </div>
-            <input type="submit" class="btn" name="update" value="Mettre à jour">
+        <label for="id_inscription">ID Inscription :</label><br>
+        <input type="number" id="id_inscription" name="id_inscription" value="<?php echo $repas['ID_inscription']; ?>" required><br><br>
+
+        <input type="submit" name="update" value="Mettre à jour">
     </form>
 </main>
 <?php
@@ -100,3 +98,4 @@ if ($success_message) {
 <?php
 $con->close();
 ?>
+
