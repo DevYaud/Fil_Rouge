@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['mail'] = $user['mail'];
         $_SESSION['Id_connexion'] = $user['Id_connexion'];
 
-        $success_message = "Rapport ajouté avec succès !";
+        $success_message = " Connection effectuée !";
         // Redirection vers le tableau de bord
         header('Location: dashboard.php');
         exit(); // Assurez-vous que le script s'arrête après la redirection

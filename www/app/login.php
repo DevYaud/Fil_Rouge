@@ -4,11 +4,8 @@ session_start();
 require_once '../functions/db.php';
 $con = getDatabase();
 
-$success_message ="";
-if (mysqli_connect_errno()) {
-    exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
 
+$success_message ="";
 // Vérification des données du formulaire
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $mail = $_POST['mail'];
@@ -40,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['Id_enfant'] = $enfant['Id_enfant'];
         }
 
-        $success_message = "Rapport ajouté avec succès !";
+        $success_message = " Connection effectuée !";
         echo "Connexion réussie !";
         // Redirection vers le tableau de bord
         header('Location: dashboard.php');
