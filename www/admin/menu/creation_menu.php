@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $plat = $_POST['plat'];
     $dessert = $_POST['dessert'];
     $date = $_POST['date'];
-    $id_inscription = $_POST['id_inscription'];
 
     // Requête d'ajout de données
     $stmt = $con->prepare('INSERT INTO REPAS (nom,entree, plat, dessert, date) VALUES (?, ?, ?, ?)');
