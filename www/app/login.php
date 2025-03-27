@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         $success_message = " Connection effectuée !";
-        echo "Connexion réussie !";
         // Redirection vers le tableau de bord
         header('Location: dashboard.php');
         exit(); // Assurez-vous que le script s'arrête après la redirection
