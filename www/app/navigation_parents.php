@@ -29,7 +29,7 @@ session_start();
             <span class="nav-icon">📜</span>
             <span class="nav-text">Facture</span>
         </a>
-        <a href="http://creche.zaud.org/app//autre/notation.php" class="nav-item">
+        <a href="http://creche.zaud.org/app/autre/notation.php" class="nav-item">
             <span class="nav-icon">⚙️</span>
             <span class="nav-text">Satisfaction</span>
         </a>

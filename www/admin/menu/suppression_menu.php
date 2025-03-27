@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 <main class="content">
     <h1>Supprimer un Repas</h1>
-    <form action="suppression_repas.php" method="post">
+    <form action="suppression_menu.php" method="post">
         <div class="form-group">
             <label for="repas">Sélectionnez un repas à supprimer :</label><br>
             <select id="repas" name="repas" required>
