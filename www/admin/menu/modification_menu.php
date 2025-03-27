@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
     $id_inscription = $_POST['id_inscription'];
 
     // Requête de mise à jour du repas
-    $stmt = $con->prepare('UPDATE REPAS SET nom = ?, plat = ?, dessert = ?, date = ? WHERE Id_repas = ?');
-    $stmt->bind_param('ssssi', $nom, $entree, $plat, $dessert, $date, $id_repas);
+    $stmt = $con->prepare('UPDATE REPAS SET nom = ?, entree = ?, plat = ?, dessert = ?, date = ? WHERE Id_repas = ?');
+    $stmt->bind_param('ssssii', $nom, $entree, $plat, $dessert, $date, $id_repas);
     if ($stmt->execute()) {
         $success_message = "Repas mis à jour avec succès !";
     } else {
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
         <input type="text" id="nom" name="nom" value="<?php echo htmlspecialchars($repas['nom']); ?>" required><br><br>
 
         <label for="entree">Entrée :</label><br>
-        <input type="text" id="entree" name="entree" value="<?php echo htmlspecialchars($repas['entrée']); ?>" required><br><br>
+        <input type="text" id="entree" name="entree" value="<?php echo htmlspecialchars($repas['entree']); ?>" required><br><br>
 
         <label for="plat">Plat :</label><br>
         <input type="text" id="plat" name="plat" value="<?php echo htmlspecialchars($repas['plat']); ?>" required><br><br>

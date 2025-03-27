@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_inscription = $_POST['id_inscription'];
 
     // Requête d'ajout de données
-    $stmt = $con->prepare('INSERT INTO REPAS (nom, plat, dessert, date) VALUES (?, ?, ?, ?)');
-    $stmt->bind_param('sssi', $nom, $plat, $dessert, $date);
+    $stmt = $con->prepare('INSERT INTO REPAS (nom,entree, plat, dessert, date) VALUES (?, ?, ?, ?)');
+    $stmt->bind_param('ssssi', $nom,$entree, $plat, $dessert, $date);
     if ($stmt->execute()) {
         $success_message = "Menu ajouté avec succès !";
     } else {
